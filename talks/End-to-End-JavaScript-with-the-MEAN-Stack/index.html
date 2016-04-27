@@ -1,0 +1,1637 @@
+﻿<!doctype html>
+<html lang="en">
+	<!-- http://localhost:1337/End-To-End-JavaScript-with-the-MEAN-Stack/index.html#/introduction -->
+	<head>
+		<meta charset="utf-8">
+
+		<title>End-to-End JavaScript with the MEAN Stack</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/monokai.css"><!-- googlecode monokai zenburn tomorrow-night-bright -->
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+<div class="reveal">
+			
+			<!-- INTRODUCTION -->
+			
+			<div class="slides">
+                <section>
+                    <section id="introduction" data-state="intro">					
+						<h1>End-to-End JavaScript</h1>
+						<div>
+							<h2 style="display:inline;padding-right:15px">with the</h2>
+							<img style="vertical-align:middle;height:124px;width:494px" src="./img/mean.jpg" />
+							<h2 style="display:inline;padding-left:15px">stack</h2>
+                        </div>	
+						<br/>
+						<br/>
+                        <p style="font-size:32px">By <a href="http://about.me/joao.p.silva">João Silva</a> for the <a href="https://cern.ch/springcampus">CERN Spring Campus 2014</a></p>
+						<p style="font-size:32px">University of Oviedo, Gijón, Spain</p>
+						<aside class="notes">
+						Hola, muy buenas a todos, welcome everyone, and thank you for coming!
+						Today, I'm gonna talk to you about a very trendy topic amongst the web developer community these days, which is End-to-End JavaScript. 
+						And what is End-to-End JavaScript? In a nutshell, it means that you use JavaScript not only on the browser (the client end), but also on the server-side.
+						It's FullStack JavaScript. For that, I'm gonna introduce you to the MEAN Stack, MongoDB, Express, AngularJS, and NodeJS.
+						Don't worry if you don't know any of these technologies, as I'll be introducing each one of them later on.
+						I'll try to cram all of this into 60 minutes, so let's get started.
+						</aside>
+                    </section>
+                    <section>
+                        <h2>Who am I?</h2>
+                        <pre class="zoomTarget"><code style="font-size:1.4em;line-height:32px">{
+  "name": "João Silva",
+  "country": "Portugal",
+  "employer": "CERN",
+  "title": "Software Engineer",
+  "technologies": [
+    "Java",
+    "JavaScript",
+    "Groovy",
+    "Grails",
+    "Activiti Workflow"
+  ],
+  "email": "joao.p.silva@cern.ch"
+}</code></pre>
+					<aside class="notes">
+					But first, a little about myself, of course. My name is João Silva, I'm from the country next door, Portugal, and I work as a software engineer at CERN. 
+					I mainly work with Java, JavaScript, more recently Grails, and workflow development, a topic I'll discuss a bit in tomorrow's talk.
+					<aside>
+                    </section>
+                    <section>
+                      <h2>History</h2>
+					  <p>
+						<img src="./img/JavaScript-logo.png" width="400" />
+					  </p>
+                      <p style="font-size: 72px;">→</p>
+					  <aside class="notes">
+					  Before we actually start with the MEAN stack, I'll talk a bit about the history of JavaScript.
+					  Because, as with many other things, to understand why something is the way it is, it is useful to know how it got there in the first place.
+					  </aside>
+                    </section>
+                </section>
+				
+				<!-- HISTORY -->
+				
+				<section>
+					<section>
+						<h2>The Dawn of JavaScript</h2>
+						<p>
+							<img src="./img/netscape.gif" />
+						</p>
+						<p class="fragment">Netscape Navigator</p>
+						<aside class="notes">
+						<p>The Dawn of JavaScript, how it all began. How many of you recognize this logo?</p>
+						It's the logo of Netscape Navigator, one of the world's first web browsers, and the dominant one in terms of usage share in the 1990s.
+						But, most importantly, it was the browser for which JavaScript was originally developed.
+						</aside>
+					</section>
+					<section>
+						<h2>Historical Background</h2>
+                        <div>
+                            <ul>
+                                <li>Created in 1995 by Brendan Eich of Netscape</li>
+								<li class="fragment">Mocha → LiveScript → JavaScript</li>
+								<li class="fragment">Influenced by Scheme and Self
+									<ul class="fragment">
+										<li>First-class functions</li>
+										<li>Closures</li>
+										<li>Prototypes</li>
+										<li>Object literals and array literals</li>
+									</ul>								
+								</li>
+								<li class="fragment"><q>Glue language</q>
+									<ul class="fragment">
+										<li>Form validations</li>
+										<li>Adding interactivity to web pages</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<aside class="notes">
+						JavaScript was created in 1995 by Brendan Eich, an engineer working for Netscape, in just 10 days.
+						<p>
+						Originally, it was called Mocha, then rebranded LiveScript, to match the LiveWire server-side product of Netscape,
+						and later, to JavaScript, mainly for marketing reasons, as Java was very popular at the time, and Netscape wanted
+						to capitalize that popularity.
+						</p>
+						<p>
+						But it has very little to do with Java. In fact, it was inspired by other two languages: Scheme and Self.
+						From Scheme, a functional language based on Lisp, it took first-class functions and closures.
+						A first-class function is essentially the ability of a language to pass a function as an argument to another function,
+						to return a function from a function, or to assign a function to a variable. In other words, you treat functions in
+						the same way you treat other types, such as integers or Strings.
+						</p>
+						From Self, it took prototypes, a style of OOP in which behaviour reuse (inheritance) is performed via a process of cloning existing objects.
+						There are no explicit classes, like in Java. With prototypes, objects inherit from existing objects, you can't get more object-oriented with this.
+						<p>
+						It was originally designed as a glue language, to provide form validations and adding interactivitiy to web pages.				
+						</p>
+						And to understand why, you have to think about the time when JavaScript was invented.
+						In 1995, when use of telephone modems was widespread, a round-trip to the server was a very expensive operation. 
+						Suppose you were filling an online form, and then you click the submit button. It could take 30s to get back an answer from the server.
+						Now imagine how annoying it would be if after waiting, you received an error from the server, telling you that you forgot to fill in the e-mail.
+						Very annoying! So Netscape invented JavaScript, which allowed you to perform validations on the client (the browser), before the form was submitted to the server.
+						</aside>
+					</section>					
+					<section>
+						<h2>Browser Wars</h2>
+						<p>Internet Explorer vs Netscape Navigator</p>
+						<p>
+							<img src="./img/ie-vs-netscape.jpg" />
+						</p>
+						<img class="fragment" src="./img/blink-tag.gif" width="250" />
+						<aside class="notes">
+						Then came the browsers: Internet Explorer versus Netscape Navigator. In the end, IE won, because they tied it to Windows, which was (and still is) 
+						the most popular OS in the world.
+						They started introducing several new features to the browser, some of them completely useless, such as the blink tag, which no longer exists.
+						And with IE3, Microsoft also introduced its own JavaScript implementation called JScript (to avoid licensing issues with Netscape).
+						And all of a sudden, there were two different versions of JavaScript floating around.
+						</aside>
+					</section>
+					<section>
+						<h2>ECMAScript</h2>
+						<p>
+							<img src="./img/ecma.jpg" />
+							<div><blockquote>standardize the syntax and semantics of a general purpose, cross-platform, vendor-neutral scripting language</div>
+						</p>
+						<aside class="notes">
+						To cope with this different versions of the same language, in 1997, JavaScript was submitted to ECMA, a European standards organization, 
+						which came out with a standard that defined a new scripting language called ECMAScript, which you may see online every now and then.
+						But basically, ECMAScript is the name of the specification, and JavaScript is the concrete implementation of it.
+						</aside>
+					</section>
+					<section>
+						<h2>Server-side JavaScript</h2>
+						<p>
+							<img src="./img/netscape-book.jpg" />
+						</p>
+						<div>
+						<ul class="fragment">
+							<li>Netscape LiveWire (1996)</li>
+							<li>Rhino (1997)</li>
+							<li>Microsoft IIS (1997)</li>
+							<li>Several others since</li>
+						</ul>
+						</div>
+						<aside class="notes">
+						So far we've been talking of JavaScript on the client-side, but I've said that this talk is also about server-side JavaScript.
+						Where did this came from? In fact, the idea is far from being new.
+						In 1996, just one year after JavaScript was released to the browser, Netscape was already using JavaScript on the server-side.
+						In 1997, Microsoft also supported JavaScript on the server-side with their web server IIS.
+						</aside>
+					</section>
+					<section>
+						<h2>What went wrong?</h2>
+						<ul>
+							<li class="fragment">Slow engines</li>
+							<li class="fragment">JavaScript's perception as a plumbing language</li>
+							<li class="fragment">Lack of tooling</li>
+							<li class="fragment">Better alternatives</li>
+						</ul>
+						<br />
+						<br />
+						<p class="fragment">
+							<img src="./img/crybby_.gif" width="540" />
+						</p>
+						<aside class="notes">
+						What went wrong? Why didn't server-side JavaScript gain traction?
+						-- List stuff
+						Because of this, the idea of having JavaScript on the server-side never really picked up.
+						And people simply abandoned this idea, disappointed and crying, because they saw potential in this idea
+						of using the same language across your entire stack.
+						</aside>
+					</section>
+					<section>
+						<h2>What has changed?</h2>
+						<p>
+							<img src="./img/excited.gif" width="600" />
+						</p>
+						<aside class="notes">
+						What has changed ever since? Why is everyone so excited with JavaScript nowadays?
+						There are several reasons for this.
+						</aside>
+					</section>		
+					<section>
+						<h2>Faster Engines (V8)</h2>
+						<p>
+							<img src="./img/Chrome-V8.jpg" />
+						</p>
+						<p>Google's open source JavaScript engine</p>
+						<aside class="notes">
+						One of the most important reasons is the rise of faster JavaScript engines, namely, V8.
+						V8 is Google's open source JavaScript engine, used for the Google Chrome web-browser.
+						Whenever you run JavaScript on Chrome, it's executed by V8.
+						</aside>
+					</section>	
+					<section>
+                        <h2>V8 features</h2>
+                        <div>
+                            <ul>
+                                <li>Written in C++</li>
+								<li class="fragment">Compiles JavaScript directly into machine code</li>
+								<li class="fragment">Runtime profiler which identifies hot functions</li>
+								<li class="fragment">Can run standalone or can be embedded as a library</li>
+                            </ul>
+                            <div style="text-align: left;">
+                                <br>
+                            </div>
+                        </div>
+						<div class="fragment">
+							<div style="text-align: center;">Blazingly fast</div>
+							<div style="text-align: center;">
+								<img src="./img/fast-cheetah.gif">
+							</div>
+						</div>
+						<aside class="notes">
+						It's written in C++.
+						<p>It uses a Just-in-Time compiler to compile JavaScript source code directly into machine code when it is first executed.
+						There is no intermediate bytecode, no interpreter.</p>
+						<p>Then it has a profiler which identifies hot functions, and recompiles them with another compiler, which
+						produces even more optimized code</p>
+						<p>It's blazingly fast</p>
+						</aside>
+                    </section>								
+					<section>
+						<h2>Better tooling</h2>	
+						<ul>
+							<li class="fragment">Module system (CommonJS, AMD)</li>
+							<li class="fragment">Test frameworks (QUnit, Jasmine)</li>
+							<li class="fragment">Code quality (JSLint, JSHint)</li>
+							<li class="fragment">Dependency management (bower, npm)</li>
+							<li class="fragment">Task runner (Grunt)</li>
+							<li class="fragment">etc.</li>
+						</ul>
+						<aside class="notes">
+						<p>It has a module system, which allows you to encapsulate your code, and split large projects into multiple files</p>
+						<p>We have test frameworks, which allows you to easily unit test your code</p>
+						<p>Code quality tools, which help you detect errors and potential problems in your code, ans also to enforce code conventions
+						(e.g. duplicate variable names, not inserting a semicolon at the end of each statement</p>
+						<p>Package manager, similar to Maven for Java</p>
+						<p>Task runner, similar to Ant for Java, which allows you to define lists of tasks to be executed sequentially (e.g. first you run tests, then you minify your files, then you deploy them</p>
+						</aside>
+					</section>
+					<section>
+						<h2>JavaScript is cool now</h2>
+						<p>
+							<img src="./img/batman-unicorn-dolphins.jpg" width="400" />
+						</p>
+						<ul>
+							<li class="fragment">Top Language on GitHub for 2013 (> 250k repositories)</li>
+							<li class="fragment">Used for Web servers, Desktop applications, Presentations...</li>
+						</ul>
+						<aside class="notes">						
+						And of course, JavaScript is cool now.
+						It's the top language on GitHub in terms of repositories.
+						It's used for web servers, desktop applications, presentations like this one, and also...
+						</aside>
+					</section>						
+					<section data-state="demo">
+						<h2>...Games</h2>
+						<canvas id="game-red" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+						<div id="escapeBirds" style="font-size:11px;cursor:pointer">sos</div>
+						<aside class="notes">
+						Games. This one for example, is just a few lines of JavaScript, using the boxbox physics engine.
+						</aside>
+					</section>						
+					<section>
+						<h2>End-to-End JavaScript</h2>
+						<p>
+							<img style="vertical-align:middle;height:124px;width:494px" src="./img/mean.jpg" />
+							<div style="font-size: 72px;">→</div>
+						</p>
+						<aside class="notes">
+						With all of this nice features, the idea of end-to-end JavaScript was brought back to life.
+						</aside>
+					</section>
+				</section>
+				
+				<!-- MEAN -->
+				
+				<section>
+					<h2>The MEAN Stack</h2>
+					<p>
+						<img style="background-color:white" src="./img/mean-diagram-3.png" width="800" />
+					</p>				
+					<p>Monoglot programming</p>
+					<aside class="notes">
+					One of the most used stacks for doing that, is the MEAN stack. It's a typical three-tier architecture.
+					It has node.js as the server-side JavaScript platform.
+					Express as the web application framework.
+					MongoDB as the database.
+					And AngularJS, for the client-side.
+					This allows you use what I call <strong>monoglot programming</strong>, a single language, JavaScript, for the entire stack.
+					</aside>
+				</section>
+
+				<!-- NODE.JS -->
+				
+				<section>
+					<section>
+						<h2>node.js</h2>
+						<p>
+							<img style="background-color:white" src="./img/nodejs-logo.png" />
+						</p>
+						<p><q>Server-side JavaScript</q></p>
+						<aside class="notes">
+						Let's start with node.js, which, in a very simplistic way, is server-side JavaScript.
+						</aside>
+					</section>
+					<section>
+						<h2>What is node.js?</h2>
+						<blockquote>Node.js is a <strong><u>platform</u></strong> built on <strong><u>Chrome's JavaScript runtime</u></strong> for easily building fast, scalable <strong><u>network</u></strong> applications. Node.js uses an <strong><u>event-driven</strong></u>, <strong><u>non-blocking I/O</strong></u> model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</blockquote>
+						<!--
+						<p>
+						<ul>
+							<li>Server-side JavaScript plaform, built on Google's V8 engine</li>
+							<li>Written in C/C++</li>
+							<li>Tailored for highly-concurrent applications</li>
+							<li>Does I/O in a very special way</li>	
+						</ul>
+						</p>
+						-->
+						<aside class="notes">
+						It's a server-side JavaScript platform, built on Google's V8 engine, which I talked about before.
+						It does I/O in a very special way, as we shall see.
+						It's tailored for highly-concurrent web applications.
+						<p>The basic thesis of node.js is that I/O needs to be done differently.</p>
+						</aside>
+					</section>
+					<section>
+						<h2>The cost of I/O</h2>
+						<p>
+							<img src="./img/latency-bar-graph.png" />
+						</p>
+						<p style="font-size:20px">Source: Ryan Dahl's JSConf node.js presentation</p>
+						<aside class="notes">						
+						The core premise behind Node's approach is that I/O operations are <strong>really slow</strong> compared to the computation done in your application.
+						On this graph, you can see modern computer latency, in terms of CPU cycles, of several I/O operations.
+						Don't focus on the numbers, but on the differences in magnitude.
+						As you can see, disk and network access times dwarf things like memory or CPU access.
+						Therefore, they should be treated differently, as they are fundamentally different.
+						
+						For example, opening a TCP connection or accessing a database will waste millions of CPU clock cycles.
+						During these I/O operations, what is your CPU doing?
+						</aside>
+					</section>
+					<section>
+						<h2>Waiting...</h2>
+<pre style="width:65%"><code class="javascript" style="font-size:1.1em;line-height:24px">var results = db.query('select * from bigtable'); // Blocking
+// Process results
+fs.writeFile('/var/log/', 'bla');
+var response = JSON.stringify(results);
+</pre></code>
+						<p>
+							<img style="background-color:grey" src="./img/waiting.png" />
+						</p>
+						<p class="fragment">Most web applications are I/O bound, not CPU bound</p>
+						<p class="fragment">Node.js was designed to exploit this imbalance</p>
+						<aside class="notes">
+						And the answer is, in most cases, waiting, it does nothing at all. It's literally blocked until the I/O operation completes.
+						Consider for example this typical web application scenario, where a user requests some resource, you fetch data
+						from the database, do some processing, and then return data.
+						<p>The slim dark green bars represent the time your app devotes to processing and the grey bars the time spent waiting for I/O to complete.</p>
+						As you can see, the vast majority of time is spent on I/O, waiting.
+						That's because most web applications are I/O bound, not CPU bound!
+						Node.js was designed to exploit this imbalance because better software can multitask.
+						</aside>
+					</section>
+					<section>
+						<h2>Scaling with threads</h2>
+						<p>
+							<img style="background-color:grey" src="./img/scaling-threads-crop.png" />
+						</p>
+						<ul>
+							<li class="fragment">Context-switching overhead</li>
+							<li class="fragment">Execution stacks take up memory</li>
+							<li class="fragment">C10k problem</li>
+						</ul>
+						<aside class="notes">
+						Before we get into the approach Node.js takes to multitask, let's see how we scale with other models.
+						With a thread-based model, used by Apache for example, you'd scale by creating multiple threads, one for each concurrent connection.
+						However, each thread will spent most of its time waiting for I/O, not processing application logic, as you can see.
+						It also introduces context-switching, an expensive operation, and uses considerable memory to maintain execution stacks.
+						There's also the C10k problem which is the problem of optimising network sockets to handle a large number of clients at the same time.
+						It's hard to do this using a thread-based model.
+						</aside>
+					</section>
+					<section>
+						<h2>Scaling with processes</h2>
+						<p>
+							<img style="background-color:grey" src="./img/scaling-processes-crop.png" />
+						</p>
+						<ul>
+							<li class="fragment">Process scheduling overhead</li>
+							<li class="fragment">High memory usage</li>
+						</ul>						
+						<aside class="notes">
+						Another popular approach is to run multiple processes. Everytime there's a new connection, you fork the current process,
+						and you execute the new request on the child process.
+						It's similar to scaling with threads, though it does use more memory, and also has process scheduling overhead.
+						</aside>
+					</section>
+					<section>
+						<h2>Scaling with an event loop</h2>
+						<p>
+							<img src="./img/scaling-event-loop.png" />
+						</p>
+						<ul>
+							<li class="fragment">Single-threaded</li>
+							<li class="fragment">Leverages asynchronous I/O APIs of the host OS</li>
+							<li class="fragment">Never blocks for I/O operations</li>
+							<li class="fragment">Handles large number of concurrent connections</li>
+						</ul>						
+						<aside class="notes">
+						Finally, the approach followed by Node.js, and nginx, for example, is having an <strong>event loop</strong>.
+						In this case (<strong>down</strong>), there's a single thread within a single process, that handles all the requests.
+						And everytime there's an I/O operation, node.js executes it assynchronously, by leveraging the non-blocking
+						I/O APIs of the underlying operating system. (<strong>down</strong>)
+						It never blocks for I/O operations. (<strong>down</strong>)
+						Handles large number of concurrent connections.
+									
+						<p>It relies on the premise that time spent waiting for I/O far outweighs the time spent
+						executing application logic. If your application is more CPU-intensive (calculating Pi up to a trillion digits),
+						then Node.js is not the right platform. You'll block the event loop.</p>
+						</aside>
+					</section>
+					<section>
+						<h2>The node.js Event Loop</h2>
+						<p>					
+							<img src="./img/event-loop.png" width="1024" />
+						</p>
+						<aside class="notes">
+						More details about the node.js event loop.
+						It handles all requests asynchronously on the same thread.
+						Whenever, there's a new request (for example, someone wants to connect to your web server), that requires an I/O operation,
+						node.js registers a callback internally, and continues processing more requests in the event loop.
+						Then, when the I/O operation is complete, the event loop will be notified, and the callback will then be triggered.
+						Let's see an example.
+						</aside>
+					</section>				
+					<section>
+						<h2><span style="background-color: rgb(255, 63, 71);padding-left:25px;padding-right:25px">Blocking I/O</h2>
+<pre><code class="javascript" style="font-size:1.8em;line-height:38px">var results = db.query('select * from bigtable');
+// Process results
+</pre></code>
+<div class="fragment">
+<h2>
+<br/>
+<!--<span>Non-blocking I/O</span></h2>-->
+<span style="background-color:green;padding-left:25px;padding-right:25px">Non-blocking I/O</span></h2>
+<pre><code class="javascript" style="font-size:1.8em;line-height:38px">db.query('select * from bigtable', function(results) { 
+  // Process results
+});
+</pre></code>
+<p class="fragment">JavaScript fits perfectly the event loop model with first-class functions and closures</p>
+</div>
+						<aside class="notes">
+						When using blocking I/O, here's what your code looks like. You make a query, and your code blocks, until the database responds.
+						With non-blocking I/O, what you do is pass a "callback", which is just a function, to your database query and you continue with your code.
+						Your application <strong>does not block</strong>.
+						
+						If you've already used JavaScript on the browser, you already know the concept of a callback. 
+						For example, if you want to do something when someone clicks on button, you add an event to the button, where you say,
+						when someone clicks on the button, call this function. This function is a callback. You call it back whenever the button gets clicked.
+						JavaScript embraces evented programming, it's a perfect fit for the event loop.
+						</aside>
+					</section>											
+					<section>
+						<h2>node.js architecture</h2>
+						<p>
+							<img style="background-color:white" src="./img/nodejs-arch-ppt.png" width="1024" />
+						</p>
+						<aside class="notes">
+						To conclude the theory part, here's the architecture of node.js. 
+						More than 80% of node is written in C and C++, and the remainder in JavaScript.
+						We have <strong>V8</strong>, which is the JavaScript engine.
+						Then there is the <strong>Async I/O</strong> and the event loop module, both using libuv, a library which supports cross-platform assynchronous I/O.
+						For example, if you are in Unix and you want to read a file, it will use the kpoll syscall, on Windows, an IO Completion Port,
+						and if you're unlucky enough to build a server using a Mac, you have the good old select syscall.
+						Then there are the bindings, written in C, which are a portal from the C world to JavaScript, and gives you access to the file system,
+						to sockets, etc.
+						Finally, a JavaScript API which just delegates everything to the C and C++ part.
+						<!--node.js is essentially a set of bindings to the V8 JavaScript engine. It allows one to script programs that do I/O
+						in JavaScript. Focused on performance. Up until now, JavaScript was restricted to the browser, nothing else than 
+						just manipulating the DOM.-->
+						</aside>
+					</section>					
+					<section>
+						<h2>Examples</h2>
+						<p>
+							<img src="./img/excited-conan.gif" width="768" />
+						</p>						
+						<aside class="notes">
+						Enough about theory, let's see some exciting examples. I hope you are as enthusiastic as Conan O'Brien!
+						</aside>
+					</section>
+					<section>
+						<h2>Reading a file</h2>
+<pre><code class="javascript" style="font-size:1.4em;line-height:34px">var fs = require('fs');
+
+fs.readFile('hello.txt', function(err, data) {
+  if (err) throw err;
+  console.log(data);
+});
+</code></pre>
+					<aside class="notes">
+					Reading a file. The first thing we do, is to load the file system module, using this require call.
+					Require is similar to the import keyword in Java and Python, it loads up an external resource.
+					Then, we call the readFile function, to read a file called hello.txt, and we pass a callback function,
+					that will be called when the data of the file is ready for you to use.
+					</aside>
+					</section>
+					<section>
+						<h2>TCP Echo Server</h2>
+<pre><code class="javascript" style="font-size:1.4em;line-height:34px">var net = require('net');
+
+var server = net.createServer(function (socket) {
+  socket.write('Welcome to the echo server\r\n');
+  socket.pipe(socket);
+});
+
+server.listen(1337);
+</code></pre>			
+					<aside class="notes">
+					Let's now write a TCP echo server, which echoes back to the client, whatever the client types.
+					First, we import the net module, which allows to work with low-level network protocols.
+					Then, we create a server, and we pass a callback, as usual, which will be called for each new connection.
+					And for each new client, we will say, "Echo server", and then we will use pipe to write back to the client, whatever it types.
+					Let's see.
+					<!--The pipe() function reads data from a readable stream as it becomes available and writes it to a destination writable stream.Socket is both readable and writable.-->
+					</aside>
+					</section>
+					<section>
+						<h2>HTTP Server</h2>
+<pre><code class="javascript" style="font-size:1.4em;line-height:34px">var http = require('http');
+
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {'Content-Type': 'text/html'});
+  response.end('&lt;h1&gt;Hello World&lt;/h1&gt;');
+});
+server.listen(1337);
+
+console.log('Server running at http://127.0.0.1:1337/');
+</code></pre>
+					<aside class="notes">
+					Now a web server!
+					Again, we import the http module, to allow us to work with the HTTP protocol.
+					Then, we create a server, listening on port 1337, and we pass a callback which gets a request and response parameters, everytime there's a new incoming request from a client.
+					And what we do is, we set the HTTP headers, and we respond with Hello World!
+					Amazingly simple, right? Let's see it at work.
+					Behind the scenes that are sockets, low-level kernel calls, etc.
+					And for you, it's just 5 lines in JavaScript!
+					</aside>
+					</section>
+					<section>
+						<h2>Summary</h2>
+						<ul>
+							<li>Server-side JavaScript environment</li>
+							<li class="fragment">Uses Chrome's V8 engine</li>
+							<li class="fragment">Event-driven</li>
+							<li class="fragment">Non-blocking I/O</li>
+							<li class="fragment">Single-threaded event loop</li>
+						</ul>							
+						<aside class="notes">
+						In sum.
+						</aside>
+					</section>					
+				</section>
+				<section>
+					<section>
+						<h2>Express</h2>
+						<p>
+							<img src="./img/express-logo.png" />
+						</p>
+						<p>web application framework for node.js</p>
+					</section>				
+					<section>
+						<h2>What is Express?</h2>
+						<blockquote>Express is a minimal and flexible node.js <strong><u>web application framework</u></strong>, providing a robust set of features for building single and multi-page, and hybrid web applications.</blockquote>
+					</section>
+					<section>
+						<h2>Web application with node.js</h2>
+<pre><code class="javascript" style="font-size:1.1em;line-height:24px">var http = require("http");
+var fs = require("fs");
+
+http.createServer(function(req, res) {
+  // Homepage
+  if (req.url == "/") {
+    res.writeHead(200, { "Content-Type": "text/html" });
+    res.end("Welcome to the homepage!");
+  }
+
+  // About page
+  else if (req.url == "/about") {
+    res.writeHead(200, { "Content-Type": "text/html" });
+    fs.readFile(__dirname + "/about.html", function (err, data) {
+      res.end(data);
+    });    
+  }
+
+  // 404'd!
+  else {
+    res.writeHead(404, { "Content-Type": "text/plain" });
+    res.end("404 error! File not found.");
+  }
+}).listen(1337);
+</pre></code>					
+					<aside class="notes">
+					To see why we need express, let's see how you could build a basic application with Express. 
+					Suppose you're building a basic application, which has a welcome page, an about page,
+					and for everything else, it returns a 404, which is an HTTP error code which stands for Resource Not Found.
+					This is how it looks like in node.js.
+					You compare the URL which is being requested, and you respond with the content,
+					you load html files manually, and you set headers all by yourself.
+					It's cumbersome.					
+					And just like in Java, you can build full web applications using just basic Servlets, or using node.js.
+					But if you want to avoid writing tons of code, you'd use a framework.
+					</aside>
+					</section>
+					<section>
+						<h2>Web application with Express</h2>
+<pre><code class="javascript" style="font-size:1.1em;line-height:24px">var express = require("express");
+var app = express();
+
+app.get("/", function(request, response) {
+  response.send("&lt;h1&gt;Welcome to the home page!&lt;/h1&gt;");
+});
+
+app.get("/about", function(request, response) {
+  response.render("about.html");
+});
+
+app.all("*", function(request, response) {
+  response.send(404, "404 error! File not found.");
+});
+
+app.listen(1337);
+</pre></code>					
+					<aside class="notes">
+					Here's the same application, with express.
+					First, we include the express module, so express is just another node.js module.
+					Then, we create an application by calling the express function.
+					Notice how we no longer work with the low-level http module, we work on a much higher-level.
+					We also no longer set HTTP headers manually, the framework knows what's the content type depending on what you send.
+					Express enriches the request and response parameters with extra methods.
+					You also don't need to load HTML files manually, you just call the render method.
+					</aside>
+					</section>					
+					<section>
+						<h2>Express Features</h2>
+						<p>
+							<img src="./img/excited-adventure-time.gif" width="768" />
+						</p>					
+						<aside class="notes">
+						Let's see where Express shines.
+						</aside>
+					</section>
+					<section>
+						<h2>Routing</h2>
+						<p>Map different requests to specific handlers</p>
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">var express = require("express");
+var app = express();
+
+app.post("/action/:id?", function(request, response) {
+  var id = request.params.id;
+  response.send(id ? "hello " + id : "hello");
+});
+
+app.get("/json", function(request, response) {
+  response.send({ foo: "bar" });
+});
+
+app.all("*", function(request, response) {
+  response.send(404, "404 error! File not found.");
+});
+
+app.listen(1337);
+</pre></code>					
+					<aside class="notes">					
+					Routings are one of the core concepts in Express. They are applied to an <strong>HTTP verb</strong> via a method with the same name, such as <strong>GET</strong> or <strong>POST</strong>, or all for both.
+					We can define routes that include an optional variable called id, which is then available for us in the callback.
+					We can define routes with wildcards or regular expressions like the match all route at the end.
+					This will match every request which didn't match the previous ones.
+					<!-- http://evanhahn.com/understanding-express-3/ -->
+					</aside>
+					</section>
+                    <section>
+						<h2>Handling Form Data</h2>
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">var express = require('express');
+var bodyParser = require('body-parser');
+var app = express();
+
+app.use(bodyParser());
+
+app.get('/', function(req, res) {
+  res.send('&lt;form method="post" action="/"&gt;' +
+           'Name: &lt;input type="text" name="username" /&gt;' +
+           '&lt;input type="submit" /&gt;' +
+           '&lt;/form&gt;');
+});
+
+app.post('/', function(req, res) {
+  // Always sanitize your data to prevent XSS, remember Derek's presentation!
+  res.send('¡Bienvenido!, ' + sanitize(req.body.username));
+});
+
+app.listen(1337);
+</pre></code>					
+					<aside class="notes">
+					Handling form data. I'm gonna show you a simple app, where we define a form with a name field, and when we
+					submit the form, when we POST the form, we simply say "Bienvenido", followed by the name which was typed.
+					</aside>
+					</section>
+					<section>
+						<h2>View Rendering</h2>
+<div class="fragment">						
+index.jade
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">doctype html
+html(lang="en")
+  head
+    title =pageTitle
+  body
+    h1 Welcome to the #{pageTitle}!
+    p Jade is a cool, high-performance templating engine for Node.js.
+</code></pre>			
+</div>			
+<div class="fragment">
+app.js
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">var express = require('express');
+var app = express();
+
+app.get('/', function(req, res) {
+  res.render('index.jade', { pageTitle: 'CERN Spring Campus 2014' });
+});
+</code></pre>	
+</div>
+<!--<p>Other template engines: Jade, Handlebars, EJS, etc.</p>-->
+						<aside class="notes">
+						Clearly, it isn't pratical and readable to continue writing HTML in your code. You shouldn't mix application logic with presentation markup.
+						To help with this, Express supports view engines, or templating engines.
+						The one I'll use in this presentation is called Jade.
+						It is basically HTML without all the brackets, and it looks like this.
+						To render this, we call the render function, and we say, render "index.jade".
+						We also pass a variable, called pageTitle.
+						This variable will be replaced in our template.
+						Whenever you say pageTitle, this placeholder, will be replaced by the variable value which is CERN Spring Campus 2014.
+						Let's see this running.
+						</aside>					
+					</section>
+					<section>
+						<h2>Layouts and partial views</h2>
+<div class="fragment">
+layout.jade	
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">html
+  body
+    h1 Profound Quotes
+    block content
+</code></pre>
+</div>	
+<div class="fragment">
+quotes.jade	
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">extends layout
+  block content
+    p The cave that you fear to enter holds the treasure you seek.
+</code></pre>
+</div>				
+<div class="fragment">		
+app.js
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">var express = require('express');
+var app = express();
+
+app.set('view engine', 'jade');
+
+app.get('/', function(req, res) {
+  res.render('quotes');
+});
+</code></pre>	
+</div>
+						<aside class="notes">
+						Express also supports the notion of layouts and partial views.
+						Most of the times, your application layout will have a common header, and a footer, or a sidebar, which is included in every page of your application.
+						And you don't want to repeat this code all over the pages.
+						What you do is, you define a master layout, which contains the common parts.
+						And then you define placeholders for the part which varies.
+						
+						Let's see a small example. Our layout defines a header which says Profound quotes.
+						And our quotes page extends this layout, and we include a paragraph.
+						
+						Then we render the quotes page.
+						And the end result is that the master layout and the quotes page get merged into one.						
+						</aside>
+					</section>
+					<section>
+						<h2>Layouts and partial views</h2>
+<pre><code style="font-size:1.4em;line-height:32px">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Profound Quotes&lt;/h1&gt;
+    &lt;p&gt;The cave that you fear to enter holds the treasure you seek.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;			
+</pre></code>		</section>						
+					<section>
+						<h2>Middleware</h2>
+						<p>Middle layer between Express and the network</p>
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">var express = require('express');
+var app = express();
+
+// A middleware is a function (request handler) with three arguments
+var ensureAuthenticated = function(req, res, next) {
+  if (req.isAuthenticated()) {
+    var username = req.username;
+    req.user = User.findByUsername(username);
+    return next();
+  }
+  return res.redirect("/login");
+};
+
+app.use(ensureAuthenticated);
+
+app.get('/', function(req, res) {
+  res.send('Welcome ' + req.user);
+});
+</code></pre>			
+						<div class="fragment">
+							<ul>
+								<li>Authentication</li>
+								<li>Error handling</li>
+								<li>Session</li>
+							</ul>
+							<ul style="margin-left: 120px">
+								<li>Authorization</li>
+								<li>Security</li>
+								<li>Sanitization of input</li>
+							</ul>
+						</div>
+						<aside class="notes">
+						Middleware is for me the most powerful features of Express.
+						In the end, it boils down to a function that can handle requests.
+						And it allows you to intercept requests before they reach your application, in the same way a Servlet Filter in Java works.
+						For example, suppose you want to ensure that a user is authenticated, before they reach your application.
+						So we define this middleware function here, and then we tell express to use it.
+						And we can even modify the original request, to add extra attributes. In this case, we can load a user from the database
+						and pass it in the request.
+						And Express already provides you plenty of Middleware.
+						</aside>
+					</section>
+					<section>
+						<h2>Configuration</h2>
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">app.configure(function () {
+  app.set('views', __dirname + '/views');
+  app.use(staticProvider(__dirname + '/public');
+  app.use(bodyParser());
+  app.use(csrf());
+  app.use(session());
+});
+
+app.configure('development', function () {
+  app.use(errorHandler({
+    dumpExceptions: true,
+    showStack: true
+  });
+  app.disable('emails');
+});
+
+app.configure('production', function () {
+  app.use(errorHandler());
+  app.enable('emails');
+});
+</code></pre>						
+						<aside class="notes">
+						Express also supports configuration. For example, for the DEV environment, we might want to have extra level of logs,
+						and we want to disable emails, so we don't send an email to the client while doing some test.
+						Whilst in production, we want to reduce the errors which we show, and enable emails.
+						</aside>
+					</section>					
+					<section>
+						<h2>Summary</h2>
+						<ul>
+							<li>Web application framework for node.js</li>
+							<li class="fragment">Routing</li>
+							<li class="fragment">Templating engines (Jade, EJS, HAML, etc.)</li>
+							<li class="fragment">Layouts and partial views</li>
+							<li class="fragment">Middleware (authentication, security, and much more)</li>
+							<li class="fragment">Environment-based configuration</li>
+						</ul>							
+					</section>						
+				</section>
+				
+				<!-- MONGODB -->
+				
+				<section>
+					<section>
+						<h2>MongoDB</h2>
+						<p>
+							<img style="background-color: white;" src="./img/mongo-db-logo.png" />
+						</p>
+						<p>open-source document database</p>
+					</section>				
+					<section>
+						<h2>What is MongoDB?</h2>
+						<blockquote>MongoDB (from "humongous") is an open-source <strong><u>document database</u></strong>, and the leading <strong><u>NoSQL</u></strong> database.</blockquote>
+						<aside class="notes">
+						It's a document database and the leading NoSQL database. What does this mean?
+						</aside>
+					</section>
+					<section>
+						<h2>#NoSQL</h2>
+						<p>
+							<img style="background-color: white;" src="./img/nosql.png" />
+						</p>
+						<blockquote>Next Generation Databases mostly addressing some of the points: being <strong><u>non-relational</u></strong>, <strong><u>distributed</u></strong>, <strong><u>open-source</u></strong> and <strong><u>horizontally scalable</u></strong>.</blockquote>
+						<aside class="notes">
+						The "NoSQL" moniker refers to a class of data stores that are non-relational in nature. 
+						NoREL would be a more appropriate term, but "NoSQL" is catchier, and once it became a Twitter hashtag, it stayed of course.
+						</aside>
+					</section>
+					<section>
+						<h2>Non-relational</h2>
+						<p>
+							<img src="./img/aggregate-split.png" />
+						</p>
+						<p style="font-size:20px">Source: http://martinfowler.com/bliki/AggregateOrientedDatabase.html</p>
+						<aside class="notes">
+						What does it mean to be non-relational? It means you don't represent you data using relationships.
+						Consider, for example, an order, which you can make at Amazon for example.
+						You have the customer, the payment details, the items which you want to buy, etc.
+						How do you represent this data? Well, in a relational database, you'd have to split this into multiple tables,
+						with foreign keys between them.
+						But this doesn't feel natural, an order can be seen as a single unit, as an aggregated entity.
+						So why can't we store it as a single independent unit? Why use relational tables?
+						NoSQL provides a solution for this.
+						</aside>
+					</section>
+					<section>
+						<h2>NoSQL Flavours</h2>
+						<ul>
+							<li>Graph-oriented databases (Neo4j)</li>
+							<li>Aggregate-oriented databases
+								<ul>
+								<li class="fragment">Key-Value Store (redis)</li>
+								<li class="fragment">Column Store (Cassandra)</li>
+								<li class="fragment"><strong><u>Document Store</u></strong> (MongoDB)</li>
+								</ul>
+							</li>
+						</ul>
+						<aside class="notes">
+						There are several different flavours of NoSQL. Graph databases like Neo4j.
+						And aggregate-oriented databases.
+						</aside>
+					</section>		
+					<section>
+						<h2>Document-oriented database</h2>
+						<p>Data stored as whole documents</p>
+						<p>
+							<img style="background-color:white" src="./img/crud-annotated-document.png" width="768" />
+						</p>
+						<ul>
+							<li class="fragment">Documents are independent units</li>
+							<li class="fragment">Application logic is easier to write (reduced impedance mismatch)</li>
+							<li class="fragment">Unstructured data can be stored easily (schema-less)</li>
+						</ul>
+						<br /><br/>
+						<p style="font-size:20px">Source: http://docs.mongodb.org/manual/core/crud-introduction/</p>
+						<aside class="notes">
+						With document-oriented databases, data is stored as whole documents. In the example before, you store the whole order as a single document.
+						
+						Documents are independent units which makes performance better. <strong>next</strong>
+						
+						Application logic is easier to write. You don't have to translate between objects in your application and SQL queries, you can just turn the object model directly into a document.
+						<strong>next</strong>
+						
+						Unstructured data can be stored easily, as we shall see.
+						</aside>
+					</section>
+					<section>
+						<h2>MongoDB Features</h2>
+						<ul>
+							<li>Documented-oriented database</li>
+							<li class="fragment">Auto-sharding for horizontal scalability</li>
+							<li class="fragment">Built-in replication for high availability</li>
+							<li class="fragment">Schema-less</li>
+							<li class="fragment">Map-Reduce aggregation</li>
+							<li class="fragment">Documents are stored as BSON, a binary variant of JSON</li>
+						</ul>
+						<aside class="notes">
+						Auto-sharding for horizontal scalibility.
+						You have two ways to scale. Vertically, which means that you have a single server, and you upgrade it, buying more memory, etc.
+						Like you use for Oracle databases.						
+						Or horizontally, where you have multiple smaller servers, and you distribute data amongst them. Like google does for example.
+						Automatic sharding distributes collection data across machines.
+						Built in...
+						Map-Reduce for aggregation...
+						Documents are stored in BSON, a binary variant of JSON, which adds things such as types and lenghts of each field.
+						</aside>
+					</section>
+					<section>
+						<h2>MongoDB Terminology</h2>
+						<p>
+							<img style="background-color:white" src="./img/mongodb-terminology.png" />
+						</p>
+						<aside class="notes">
+						Terminology, let's make a parallel between the terms used by relational databases such as MySQL with MongoDB.
+						</aside>
+					</section>					
+					<section>
+						<h2>Data Model Design</h2>
+						<p>
+							<img src="./img/design-cube.gif" />
+						</p>						
+						<aside class="notes">
+						Let's see how we design a database using MongoDB.
+						</aside>
+					</section>
+					<section>
+						<h2>Data Model Design</h2>
+						<p>
+							1. Embedded Data Models
+						</p>
+						<p>
+							<img style="background-color:white" src="./img/data-model-denormalized.png" />
+						</p>
+						<ul class="fragment">
+							<li>Use when there are "contains" relationships between entities</li>
+							<li>Use when there are one-to-many relationships between entities, and the "many" always appears with the parent document</li>
+						</ul>						
+						<aside class="notes">
+						Suppose we have a user access document, where we store data about the user, contact information, and also access information.
+						To store this, we can use an embedded data model which allows applications to store related pieces of information in the same database record.
+						As a result, applications may need to issue fewer queries and updates to complete common operations.
+						There are no JOINS involved.
+						</aside>
+					</section>
+					<section>
+						<h2>Data Model Design</h2>
+						<p>
+							2. Normalized Data Models using References
+						</p>
+						<p>
+							<img style="background-color:white" src="./img/data-model-normalized.png" />
+						</p>
+						<ul class="fragment">
+							<li>Use when embedding would result in duplication</li>
+							<li>Use to represent complex many-to-many relationships</li>
+						</ul>
+						<aside class="notes">
+						The second option is to use a normalized data model using references.
+						They include links or references between documents, similar to foreign keys in relational databases.
+						</aside>
+					</section>					
+					<section>
+						<h2>Read operations</h2>
+						<p>
+							<img src="./img/read-adams.gif" />
+						</p>
+						<br />
+						<p style="font-size:20px">Source: <a>http://docs.mongodb.org/manual/core/read-operations-introduction/</a></p>
+						<aside class="notes">
+						Let's see some examples. I'll be providing an example of how you do things with Mongo and also with regular SQL.
+						</aside>
+					</section>
+					<section>
+						<h2>Query Interface</h2>
+						<p><code>db.collection.find()</code></p>
+						<p>
+							<img style="background-color:white" src="./img/crud-annotated-mongodb-find.png" />
+						</p>
+						<div>
+						<code>SQL</code>
+						<p>
+							<img style="background-color:white" src="./img/crud-annotated-sql-select.png" />
+						</p>
+						</div>
+						<aside class="notes">
+						To find something in the database, you use the find method on the collection which you want to search.
+						Notice also how the API is done in JavaScript.
+						Then, you specify the criteria, filter every user who's older than 18, hmm, suspect.
+						Then, you say you want to get the name and address attributes.
+						And finally, you say you only want 5 records.
+						And this is how you do it in SQL, for comparison.
+						</aside>
+					</section>			
+					<section>
+						<h2>Write operations</h2>
+						<p>
+							<img src="./img/write-crosswords.gif" width="480" />
+						</p>
+						<br />
+						<p style="font-size:20px">Source: <a>http://docs.mongodb.org/manual/core/write-operations-introduction/</a></p>
+					</section>		
+					<section>
+						<h2>Create</h2>
+						<p><code>db.collection.insert()</code></p>
+						<p>
+							<img style="background-color:white" src="./img/crud-annotated-mongodb-insert.png" />
+						</p>
+						<div>
+						<code>SQL</code>
+						<p>
+							<img style="background-color:white" src="./img/crud-annotated-sql-insert.png" />
+						</p>
+						</div>
+						<aside class="notes">
+						To insert a new record, it is quite simple. You call insert, and you pass a JSON document. That's all.
+						In SQL, you use the INSERT clause.
+						</aside>
+					</section>
+					<section>
+						<h2>Update</h2>
+						<p><code>db.collection.update()</code></p>
+						<p>
+							<img style="background-color:white" src="./img/crud-annotated-mongodb-update.png" />
+						</p>
+						<div>
+						<code>SQL</code>
+						<p>
+							<img style="background-color:white" src="./img/crud-annotated-sql-update.png" />
+						</p>
+						</div>
+						<aside class="notes">
+						To update, you specify the collection, the update criteria, and the new values which you want to set, in this case,
+						set the status field to "Active".
+						Quite trivial.
+						</aside>						
+					</section>
+					<section>
+						<h2>Delete</h2>
+						<p><code>db.collection.remove()</code></p>
+						<p>
+							<img style="background-color:white" src="./img/crud-annotated-mongodb-remove.png" />
+						</p>
+						<div>
+						<code>SQL</code>
+						<p>
+							<img style="background-color:white" src="./img/crud-annotated-sql-delete.png" />
+						</p>
+						</div>
+						<aside class="notes">
+						Finally, delete, you specify the collection from which you want to remove, the criteria, in this case,
+						documents for which the status is D, and that's it.
+						</aside>												
+					</section>		
+					<section>
+						<h2>Map-Reduce</h2>
+						<p><code>db.collection.mapReduce()</code></p>
+						<p>
+							<img style="background-color:white" src="./img/map-reduce.png" width="840" />
+						</p>
+						<aside class="notes">
+						There's also aggregation, where you can use map-reduce.
+						I won't go into details, but let's see this example, where we want to the amount of money spent by each customer on a website, like amazon.
+						First, what we do is a normal query, where we get all active orders.
+						Then, we use map where we define the key to aggregate (the customer id) and the amount field which we want to aggregate.
+						For that, we use reduce, which will sum all the amounts and group by a customer id.						
+						This scales really well, you can spread this computation across multiple computers.
+						</aside>						
+					</section>					
+					<section>
+						<h2>Summary</h2>
+						<ul>
+							<li>Non-relational, documented-oriented database</li>
+							<li class="fragment">Flexible schema</li>
+							<li class="fragment">Powerful query language</li>
+							<li class="fragment">Scale horizontally with auto-sharding</li>
+							<li class="fragment">Built-in replication</li>
+							<li class="fragment">Map-Reduce for aggregation</li>
+						</ul>
+					</section>
+				</section>
+				
+				<!-- ANGULARJS -->
+				
+				<section>
+					<section>
+						<h2>AngularJS</h2>
+						<p>
+							<img style="background-color: white;" src="./img/AngularJS_logo.svg" />
+						</p>
+						<p>Superheroic JavaScript MVW Framework</p>
+					</section>				
+					<section>
+						<h2>What is AngularJS?</h2>
+						<blockquote>AngularJS is what HTML would have been, had it been designed for building web-apps. Declarative templates with data-binding, MVW, MVVM, MVC, dependency injection and great testability story all implemented with pure client-side JavaScript!</blockquote>
+						<aside class="notes">
+						AngularJS is what HTML would have been, had it been designed for building web-apps.
+						When Tim Berners-Lee invented the WWW in 1989, it was conceived for meeting the demand for automatic information-sharing 
+						between scientists and universities, not for web application development.
+						AngularJS tries to solve that problem, let's see how.
+						</aside>
+					</section>
+					<section>
+						<h2>Hola Mundo, AngularJS</h2>
+<pre><code style="font-size:1.2em;line-height:26px">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hola Mundo, AngularJS - CERN Spring Campus 2014&lt;/title&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;angular.min.js&quot;&gt;&lt;/script&gt; 
+&lt;/head&gt;
+&lt;body ng-app&gt;     
+  Name: &lt;input type=&quot;text&quot; ng-model=&quot;name&quot; /&gt;
+	
+  &lt;h1&gt;Hola {{ name }}&lt;/h1&gt;     
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<div class="fragment">
+<p>Demo</p>
+<iframe width="1152" height="250" src="http://jsfiddle.net/joaopsilva/t8uN2/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>
+						<aside class="notes">
+						So, this is the most basic AngularJS application in the world.
+						The first thing we do is import the angularjs library, which is just a javascript file.
+						Then we set this ng-app attribute within the body tag.
+						This attribute tells the Angular to be active in this portion of the page, in this case, the body.
+						
+						We then create a textbox, and set the ng-model attribute to name.
+						What this does is bind the value of the textbox, what you type in, against an angular model attribute called "name".
+						Then, we say Hello, followed by this Angular bracketed expression which references a model called name.
+						So, what this does is, whenever this textbox changes, the model also gets updated, and therefore, this expression
+						which also refers to model will also get updated. Let's see.						
+						</aside>						
+					</section>					
+					<section>
+						<h2>AngularJS Features</h2>
+						<p>
+							<img src="./img/Jim-Carey_Excited.gif" width="580"/>
+						</p>					
+					</section>
+					<section>
+						<h2>Two-way Data binding</h2>
+						<p>Automatic synchronization of data between the model and view components</p>
+						<p>
+							<img style="background-color:white" src="./img/two-way-db.png" width="768" />
+						</p>
+						<p style="font-size:20px">Source: <a>http://docs.angularjs.org/guide/databinding</a></p>
+						<aside class="notes">
+						Automatic synchronization of data between the model and view components.
+						So, whenever your view changes (your textbox from the example before), the model gets updated.
+						And then, since the model gets updated, you update the view again, in this case, the Hello name part.
+						It's that simple. Try to do the same with just jQuery, it's a mess.
+						</aside>
+					</section>	
+					<section>
+						<h2>Filters</h2>
+						<p>Formats the value of an expression for display to the user</p>
+						<pre><code>{{ expression | filter1 | filter2 }}</code></pre>
+<pre class="fragment"><code style="font-size:1.2em;line-height:26px">&lt;body ng-app&gt;     
+  Name: &lt;input type=&quot;text&quot; ng-model=&quot;name&quot; /&gt;
+	
+  &lt;h1&gt;Hello {{ name }}&lt;/h1&gt;     
+	
+  &lt;h4&gt;Hello {{ name | uppercase }}&lt;/h4&gt;
+  &lt;h4&gt;Hello {{ name | lowercase }}&lt;/h4&gt;
+&lt;/body&gt;						
+</pre></code>
+<div class="fragment">
+<p>Demo</p>
+<iframe width="1152" height="300" src="http://jsfiddle.net/joaopsilva/V938w/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>
+					<aside class="notes">
+					</aside>
+					</section>
+					<section>
+						<h2>Controllers</h2>
+						<p>Contains presentation logic and binds the view with the model using scopes</p>
+<pre><code style="font-size:1.2em;line-height:26px">&lt;div ng-controller=&quot;ChatController&quot;&gt;
+  Message: &lt;input type=&quot;text&quot; ng-model=&quot;newMessage&quot;/&gt;
+  &lt;button ng-click=&quot;add()&quot;&gt;Add&lt;/button&gt;
+  
+  &lt;h2&gt;Messages&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li ng-repeat=&quot;message in messages&quot;&gt; {{ message }} &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>						
+<pre class="fragment"><code class="javascript" style="font-size:1.2em;line-height:26px">function ChatController($scope) {
+  $scope.messages = ["I <3 sidra", "Save the whales!"];
+ 
+  $scope.add = function() {
+    $scope.messages.push($scope.newMessage);
+    $scope.newMessage = "";
+  }
+}						
+</code></pre>
+					<aside class="notes">
+					Contains presentation logic and binds the view with the model using scopes.
+					The first thing you notice, is the ng-controller attribute, which defines a Controller to be bound with the view.
+					Thus, whatever you put inside the DIV, the ContactController will have its influence on it.					
+					Then we define an input which is tied to a model called newMessage.
+					ng-repeat iterates through an array in your model, and binds the view with each element. In this case, it will create a li tag.
+					
+					<p>ContactController is nothing but a plain vanilla JavaScript function.</p>
+					<p>There is an object $scope which we pass as an argument. This object is used to bind the controller with view. It decouples the view from the controller</p>
+					Initially, we set the <strong>initial state</strong> of the angular scope.
+					
+					We then define the add() function, which is bound to Add button using an attribute ng-click. ng-click binds the click event on the button or link or any clickable element with the 
+					function that is defined within $scope. So in this case, whenever Add button is clicked, the add() method on $scope will be called.
+					</aside>
+					</section>	
+					<section>
+						<h2>Controllers</h2>
+						<p>Demo</p>
+<iframe width="1152" height="500" src="http://jsfiddle.net/joaopsilva/eX3dF/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</section>
+					<section>
+						<h2>Modules</h2>
+						<p>Logical entities	used to structure your application</p>
+						<p>
+							<img src="./img/angular-modules.png" width="580" />
+						</p>
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">var myModule = angular.module('myModule',[]);
+  
+myModule.controller('ChatController', function($scope) {
+  // Controller logic
+});
+</code></pre>
+					<aside class="notes">
+					In the above demo, we defined controller as a named JavaScript function. While this is the easiest way to define them, but is certainly not advisable one. 
+					If your application grows, soon you'll have bunch of controllers lying here and there in code poluting the JavaScript namespace.
+					We should define controllers within modules, they help organize your code.
+					</aside>
+					</section>					
+					
+					<section>
+						<h2>Services</h2>
+						<p>Singleton objects or functions that carry out specific tasks</p>
+<pre><code class="javascript" style="font-size:1.4em;line-height:32px">var chatApp = angular.module('chatApp', []);
+ 
+chatApp.service('ChatService', function() {
+
+  this.getLastMessages = function() {
+    // Ajax call to read messages from database
+    return [
+      "I <3 sidra", 
+      "Save the whales!"
+    ]
+  }
+  
+  this.saveMessage = function(message) {
+    // Ajax call to save message to the database
+  }
+});
+</code></pre>
+						<aside class="notes">
+						They are used for separation of concerns.
+						If we use the example of a controller, its responsibility is essentially to bridge between your models and your views. 
+						<p>If your controller is also responsible for making ajax calls to fetch and update data, this is a violation of the SRP principle.</p>
+						Logic like that (and other business logic) should instead be abstracted out into a separate service, then injected into the objects that need to use it.
+						<!--http://blog.pluralsight.com/angularjs-step-by-step-services-->
+						</aside>
+					</section>	
+					<section>
+						<h2>Dependency injection</h2>
+						<p>Components are created by the container and provided (injected) as requested</p>
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">var chatApp = angular.module('chatApp', []);
+ 
+chatApp.service('ChatService', function() {
+  // ...
+});
+
+chatApp.controller('ChatController', function($scope, ChatService) {
+  $scope.messages = ChatService.getLastMessages();
+ 
+  $scope.add = function() {
+    ChatService.save($scope.newMessage);
+    $scope.messages.push($scope.newMessage);
+    $scope.newMessage = "";
+  }
+});
+</code></pre>		
+					<ul class="fragment">
+						<li>Reduces the tight coupling of code</li>
+						<li class="fragment">Creates modular code that is more maintanable and <strong><u>testable</u></strong></li>
+					</ul>
+					<aside class="notes">
+					How do we plug this service? We use dependency injection. It's as simple as defining a parameter with the same name, and
+					it gets automagically done by angular.
+					</aside>
+					</section>
+					<section>
+						<h2>Directives</h2>
+						<p>Extend the HTML vocabulary</p>
+<pre class="fragment" style="width:40%;font-size:48px"><code>&lt;pacman&gt;&lt;/pacman&gt;
+</code></pre>						
+<pre class="fragment"><code class="javascript" style="font-size:1.4em;line-height:32px">var app = angular.module('app',[]);
+
+app.directive('pacman', function() {
+  return {
+    restrict: 'E',  // E = Element, A = Attribute, C = Comment
+    replace: true,
+    template: "&lt;div&gt;&lt;img src='pacman.gif'/&gt;&lt;/div&gt;"
+  };
+});
+</code></pre>
+					<p class="fragment">
+						<img style="background-color:white" src="./img/pacman.gif" width="150" height="150" border="0" />
+						<!-- Use black background? -->
+					</p>
+					<aside class="notes">
+					</aside>
+					</section>	
+					<section>
+						<h2>The  return of the &lt;blink&gt; tag</h2>					
+<pre><code class="javascript" style="font-size:1.2em;line-height:26px">var blink = angular.module('blink', [])
+  .directive('blink', function($timeout) {
+   return {
+     restrict: 'E',
+     transclude: true,
+     scope: {},
+     controller: function($scope, $element) {
+       function showElement() {
+         $element.css("display", "inline");
+         $timeout(hideElement, 1000);
+       }
+       function hideElement() {
+         $element.css("display", "none");
+         $timeout(showElement, 1000);
+       }
+       showElement();
+    },
+    template: '<span ng-transclude></span>',
+    replace: true
+  }
+});
+</code></pre>
+					<aside class="notes">
+					You can build more complex directives, using directives, controllers, etc.
+					Let's see how could we build the blink tag.
+					</aside>
+					</section>
+					<section>
+						<h2>The  return of the &lt;blink&gt; tag</h2>						
+						<iframe width="1152" height="300" src="http://jsfiddle.net/joaopsilva/6MttL/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</section>
+					<section>					
+						<h2>Summary</h2>
+						<ul>
+							<li>Client-side MVC framework</li>
+							<li class="fragment">Two-way data binding</li>
+							<li class="fragment">Dependency injection</li>
+							<li class="fragment">Modular</li>
+							<li class="fragment">Filters</li>
+							<li class="fragment">Services</li>
+							<li class="fragment">Directives</li>
+							<li class="fragment">... and much more</li>
+						</ul>	
+						<aside class="notes">
+						So directives are a quite powerful feature. They are actually used by angular all over the place (ng-app, ng-show).
+						And the best thing is, they are going to be included in HTML specification, under the umbrella term Web Components.
+						But until we get there, in 2020, we can use angular directives.
+						</aside>
+				    </section>
+					<section>					
+						<h2>Summary</h2>
+						<p>
+							<img src="./img/angularjs-feelings.png" />
+						</p>
+					</section>
+				</section>	
+				
+				<!-- THE END -->
+				<section>
+					<h2>Muchas gracias</h2>
+					<p>
+						<img src="./img/thats-all-folks.gif" />
+					</p>
+					<aside class="notes">
+					That kind of wraps it up. Thank you for listening to me.
+					We have just scratched the surface of a big ocean.
+					</aside>
+				</section>
+				
+				<!-- QUESTIONS -->
+				<section>
+					<h1>Questions?</h1>
+					<p>
+						<a>joao.p.silva@cern.ch</a>
+					</p>
+				</section>	
+				
+				<!-- DEMO -->
+				<section>
+					<h1>DEMO</h1>
+					<p>
+						<a href="http://cernspringcampus.herokuapp.com">http://cernspringcampus.herokuapp.com</a>
+					</p>
+				</section>	
+
+				<!-- EXTRA SLIDES -->
+				<!--
+					<section>
+						<h2>Node package manager</h2>
+						<p>
+							<img style="background-color:white" src="./img/npm-logo.png" />
+						</p>			
+						<div class="fragment">
+						Install a package<pre style="width:50%"><code>npm install module</code></pre>						
+						</div>
+						<div class="fragment">
+						Publish a package to the index<pre style="width:50%"><code>npm publish module</code></pre>						
+						</div>
+						<aside class="notes">
+						Manages dependencies for an application, similar to maven for Java applications.
+						</aside>
+					</section>					
+				-->
+			</div>
+		</div>
+		<script src="lib/js/jquery-1.9.1.js"></script>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script src="lib/js/Box2dWeb-2.1.a.3.min.js"></script>
+		<script src="lib/js/boxbox.min.js"></script>
+		<script src="lib/js/keyDecode.js"></script>
+		<script src="lib/js/game-red.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				width: 1280,
+				height: 800,
+				
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+			
+			Reveal.addEventListener( 'ready', function( event ) {
+			    if ( $( Reveal.getCurrentSlide() ).data( "state" ) === "demo" ) {
+			    	if ( !game.isRunning ) game.run();
+				    Reveal.removeEventListeners();
+			    } else {
+				    Reveal.addEventListener();
+			    }
+			} );
+
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				var $currentSlide = $( Reveal.getCurrentSlide() );
+
+			    if ( $currentSlide.data( "state" ) === "demo" && $currentSlide.find( "canvas" ).length ) {
+			    	if ( !game.isRunning ) game.run();
+				    Reveal.removeEventListeners();
+			    } else {
+				    Reveal.addEventListeners();
+			    }
+			} );
+
+			Reveal.addEventListener( 'demo', function() {
+		    	if ( !game.isRunning ) game.run();
+			    Reveal.removeEventListeners();
+			}, false );			
+
+		</script>
+
+	</body>
+</html>

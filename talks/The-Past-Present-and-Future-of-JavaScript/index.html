@@ -1,0 +1,1724 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Past, Present, and Future of JavaScript</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="joao.p.silva@cern.ch">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+      
+				<section data-background="img/cover.png">
+
+					<div style="margin-bottom:220px;margin-right:420px">
+						<h1 class="otto" style="font-size:112px">JavaScript</h1>
+						<p style="">Past, Present, and Future</p>
+						<p>
+							<small>Created by <a href="http://hakim.se">João Silva</a> / <a href="http://twitter.com/joaopcgsilva">@joaopcgsilva</a></small>
+						</p>
+					</div>
+					<aside class="notes">
+          Hi everyone. My name is João Silva, and I'm a software engineer working at CERN's Advanced Information Systems group.
+          <p>
+          My presentation will be about JavaScript. Past. Present. And Future.
+          <p>
+          I will take you on a trip down memory lane, in a Civilization-esque journey of the evolution of JavaScript, from its inception in 1994,
+          all the way up to today.
+          <p>
+          Let's get started.
+					</aside>
+				</section>
+
+        <section data-background="img/Flag_of_Lithuania.svg">
+          <h3>Sveiki Vilniaus!</h3>
+          <aside class="notes">
+          </aside>
+        </section>        
+        
+        <section>
+					<h2>History</h2>
+					  <p>
+              <img src="img/official-javascript-logo.jpg" width="400" />
+					  </p>
+            <p style="font-size: 72px;">→</p>
+					  <aside class="notes">         
+            This presentation is organized in a logical, or rather, chronological way.
+            <p>
+            And I'll first start with the history of the language because, as with many other things, to understand why something is the way
+            it is, it is useful to know how it got there in the first place.
+            <p>
+            But even before we actually start talking about JavaScript, let's take a step back, and talk about the real beginning, the WorldWideWeb.           
+					  </aside>
+        </section>				
+        
+				<section>
+					<h2>WorldWideWeb (1990)</h2>
+					<img src="img/tims_editor.jpg" style="width:80%; height:auto" />
+					<aside class="notes">
+          As mentioned before, the World Wide Web was invented at CERN, in 1989, by Tim Berner’s Lee and Robert Caillau.
+          <p>
+          I'm also reminded of this almost everyday at CERN, when I go to the restaurant, and as I pass by a plaque,
+          which marks Tim Berner's Lee former office, where he was developing the technologies used for the web.
+          <p>
+          The first web browser and the first HTML editor, developed by Tim, was also called, not very originally, WorldWideWeb,
+          and you can see an image of it here, on his NeXT workstation, a company which was ran at the time by Steve Jobs.
+          <p>
+          It was initially used by people at CERN, introducing the web to physicists around the world, and beginning its spread.          
+          </aside>
+				</section>
+        
+        <section>
+					<h2>Line-mode (1991)</h2>
+					<img src="img/Line-mode.png" />
+					<aside class="notes">
+          Then there was the Line-mode browser, also developed at CERN, partly by Professor Derek Mathieson, and by Nicola Pellow,
+          a math student interning at CERN.   
+          <p>
+          This browser was also ported to different operating systems, from Unix to 
+          Microsoft DOS, Microsoft Disk Operating System, so that anyone could access the web, no matter the operating system.
+          </aside>        
+        </section>        
+        
+        <section>
+					<h2>NCSA Mosaic (1993)</h2>
+					<img src="img/Mosaic-wmosaic-logo-smaller.jpg" style="width:70%; height:auto" />
+					<aside class="notes">
+          Meanwhile, on the other side of the world, this idea of the world wide web caught the attention of a research institute in Chicago, called NCSA.
+          So they downloaded a copy of Tim's free browser, and decided to start developing their own, called Mosaic.
+          <p>
+          And Mosaic was the spark that lit the Web's explosive growth in 1993. Why was this?
+          <p>
+          It was the world's first cross-platform graphical web browser, it supported Unix, Macintosh, and Windows,
+          as well other protocols beside HTTP, such as FTP, the File Transfer Protocol, used to transfer files from one machine to another.
+          <p style="font-size:12px">
+          It also introduced some of the concepts which we can see in everyday's browsers, such as <b>forms</b>, where users could
+          finally interact with the pages through user inputs:
+          <b>bookmarks</b> and <b>favorites</b> to store your most viewed websites, <b>history files</b>,
+          and of course, the <b>img</b> tag, which now of course allows us to see pictures of cats, and sites like 9gag to exist.
+          <p>
+          And then...
+          </aside>        
+        </section>
+        
+        <section>
+          <h2>Geocities (1994)</h2>
+          <img src="img/geocities.png" />
+          <aside class="notes">
+            And then...
+            Sites like Geocities appeared, which allowed everyone, programmer or not, to create their own web page.
+            I remember when I developed my first website, it was very similar to this image, with lots of animated gifs,
+            and of course, it always had an image which said "under construction".
+          </aside>
+        </section>
+        
+				<section data-background-iframe="http://www.milliondollarhomepage.com/">
+          <aside class="notes">
+          And people started as well realizing the potential of the Web for making money.
+          This site, for example, was created by an English student, who needed to get money for his master studies.
+          So he created the MillionDollarHomepage.
+          What it does is, it contains a table of 1 million pixels.
+          And every pixel was sold for advertisements for 1 dollar!
+          And as you can see, every pixel was sold.
+          Genius!
+          </aside>
+				</section>
+        
+				<section>
+					<h2>The Dawn of JavaScript (1995)</h2>
+					<img src="img/netscape.gif" />
+					<p class="fragment Xroll-inX">Netscape Navigator</p>
+          <aside class="notes">
+          <p>And then in 1995, Mosaic essentially changed its name and logo to this one you can see here.</p>
+          <p>How many of you recognize it? Can you raise your hands?</p>
+          This was Netscape Navigator, and it marked the beginning of the JavaScript era.
+          <p>
+          Throughout the 1990s, Netscape was the dominant browser in terms of usage share.
+          But, most importantly, it was the browser for which JavaScript was originally developed.
+          </p>
+          </aside>
+				</section>
+
+        <section>
+						<h2>Historical Background</h2>
+            <div>
+              <ul>
+                <li>Created in 1995 by Brendan Eich of Netscape...
+									<ul class="fragment">
+										<li>...in just <strong>10 days</strong>!</li>
+									</ul>				                
+                </li>                  
+                <li class="fragment"><q>Glue language</q>
+                  <ul class="fragment">
+										<li>Form validations</li>
+										<li>Adding interactivity to web pages</li>
+									</ul>
+                </li>
+                <li class="fragment">Mocha → LiveScript → JavaScript</li>
+							</ul>
+						</div>
+						<aside class="notes">
+						JavaScript was created in 1995 by Brendan Eich, an engineer working for Netscape... in just 10 days.
+						<p>
+            It was originally designed as a glue language, to provide form validations and adding interactivitiy to web pages.				
+            <p>
+						It wasn't always called JavaScript. Originally, it was called Mocha, then rebranded LiveScript, to match the LiveWire server-side product of Netscape,
+						and later, to JavaScript, mainly for marketing reasons, as Java was very popular at the time (and still is of course), and Netscape wanted
+						to capitalize that popularity, because it was a brand new language, unknown to everyone.
+						</p>
+						</p>
+						</aside>
+		    </section>
+
+        <section>
+          <span style="font-size:82px;font-style:italic"><b style="color: rgb(240, 219, 79);">Java</b> is to <b style="color: rgb(240, 219, 79);">Java</b>Script
+          <br/>what<br/>
+          <b style="color: rgb(240, 219, 79);">Car</b> is to <b style="color: rgb(240, 219, 79);">Car</b>pet.</span>
+          <br/>
+          <small><cite>- Chris Heilmann</cite></small>
+          <aside class="notes">
+            But it has very little to do with Java. In fact... Java is to JavaScript as car is to carpet.
+          </aside>
+        </section>
+
+        <section>
+          <div class="" style="font-size:48px">
+            <div class="fragment" style="display: inline-block; margin-right: 40px;">
+                <h2 style="color: rgb(255, 0, 0); text-transform: none;">Lisp</h2>
+                <p style="font-size:72px;transform:rotate(90deg) scale(1,1.5);">&#x2799;</p><h2 style="margin: 10 px 0px; color: rgb(0, 170, 255);text-transform: none;">Scheme</h2>
+                <p style="font-size:72px;transform:scale(1.5,1.5);">&#x2798;</p> <p style="position: absolute; top: 22%; left: 0%; font-size:48px">Functional</p>
+            </div>
+            <div class="fragment" style="display: inline-block;">
+                <h2 style="color: rgb(244, 100, 29);text-transform: none;">Smalltalk</h2>
+                <p style="font-size:72px;transform:rotate(90deg) scale(1,1.5);">&#x2799;</p><h2 style="margin: 10px 0px; color: rgb(255, 0, 136);text-transform: none;">Self</h2>
+                <p style="font-size:72px;transform:scaleX(-1) scale(1.5,1.5);">&#x2798;</p><p style="position: absolute; top: 22%; left: 72%; white-space: nowrap; font-size:48px">Object-oriented</p>
+            </div>
+        </div>
+        <h2 style="text-align: left; position: relative; left: 40px; text-transform: none; font-size:64px">
+          Roots of <span style="color: rgb(240, 219, 79); font-size:82px;">JavaScript</span>
+        </h2>
+        <aside class="notes">
+                      <p>
+             In fact, it was inspired by other two languages: Scheme and Self.
+            From Scheme, a functional language based on Lisp, it took first-class functions and closures.
+            A first-class function in a nutshell is essentially the ability of a language to treat functions in
+            the same way you treat other types, such as integers or Strings, as I'll explain in my next slide.
+            </p>
+            From Self, it took prototypes, a style of OOP in which behaviour reuse (inheritance) is performed via a process of cloning existing objects.
+            There are no explicit classes, like in Java. With prototypes, objects inherit from existing objects, you can't get more object-oriented with this.
+            <p>
+        </aside>
+        </section>
+        
+        <section>
+          <h2>Functional JavaScript</h2>
+          <div>
+          <p>Functions are first-class citizens</p>
+          <pre data-line="1,2,3" style="width:65%"><code data-trim class="javascript" style="font-size:1.4em;line-height:34px">
+var foo = "bar";
+
+var f = function (x, y) {
+  return x + y;
+};
+          </code></pre>
+          </div>
+          <div class="fragment">
+          <p>Closures and Currying</p>
+          <pre style="width:65%"><code data-trim class="javascript" style="font-size:1.4em;line-height:34px">
+function g(x) {
+  return function(y) {
+    return x + y;
+  }
+}
+          
+f(1,2) === g(1)(2)
+          </code></pre>
+          </div>
+					<aside class="notes">
+          Functions are first-class citizens. This means you can assign functions to variables, as you do with other types, such as strings.
+          <p>You can also return functions, from within a function.
+          And in this case, this is actually called a closure, since the bind parameter x, is
+          encapsulated in the g function, and effectively allows you to have private variables in JavaScript.
+          <p>
+					</aside>          
+        </section>
+        
+        <section>
+          <h2>Functional JavaScript</h2>
+          <p>Higher-order Functions (Callback)</p>
+          <div class="fragment">
+          <pre style="width:100%"><code data-trim class="javascript" style="font-size:1.3em;line-height:34px">
+function forEach(array, callback) {
+  for (var i = 0; i < array.length; i++) {
+    callback(array[i], i);
+  }
+};
+          </code></pre>
+          </div>
+          <div class="fragment">          
+          <pre style="width:100%"><code data-trim class="javascript" style="font-size:1.3em;line-height:34px">
+var ponies = ["Applejack", "Pinkie Pie", "Aloe", "Cheerilee"];
+
+forEach(ponies, function (eachPony, index) {
+  console.log(index + 1 + ". " + eachPony);
+});
+          </code></pre>
+          </div>
+          <div class="fragment">        
+          <pre style="width:100%"><code data-trim class="javascript" style="font-size:1.3em;line-height:34px">          
+// 1. Applejack, 2. Pinkie Pie, 3. Aloe, 4. Cheerilee
+          </code></pre>
+          </div>
+					<aside class="notes">
+           And of course, you can create higher-order functions or <b>callbacks</b>. In other words, functions which receive another function as an argument.
+           Callbacks. Easy peazy japanazee.
+					</aside>          
+        </section>   
+
+        <section>
+          <h2>Object-oriented JavaScript</h2>
+          <div class="fragment">
+          <p>The following values are primitive</p>
+          <ul>
+            <li>Strings (<code class="javascript">"pony"</code>)</li>
+            <li>Numbers (<code class="javascript">1, 3.15</code>)</li>
+            <li>Booleans (<code class="javascript">true, false</code> )</li>
+            <li><code>null</code> (usually explicitly assigned)
+              <pre><code class="javascript" style="font-size:1.2em;line-height:32px;">var foo = null;</code></pre>
+            </li>
+            <li><code>undefined</code> (usually a default value, automatically assigned)
+              <pre><code class="javascript" style="font-size:1.2em;line-height:32px;">var foo;</code></pre>
+            </li>
+          <ul>
+          </div>          
+          <aside class="notes">
+          <p>Okay, so this was the functional part of JavaScript, let's now move on to the object-oriented part.</p>
+          When you're learning JavaScript, one of the first things people say is, everything in JavaScript is an object.
+          <p>
+          This is wrong in theory, but actually true in practice, as you'll see in the next slide.
+          <p>
+          In any case, the theory is the following.
+          </aside>
+        </section>    
+        
+        <section>
+          <h2>Object-oriented JavaScript</h2>
+          <p>All other values are objects</p>
+          <ul>
+            <li>Wrappers for primitives (rarely used directly)
+              <pre><code data-trim class="javascript" style="font-size:1.2em;line-height:32px;">
+var i = new Number(20);
+var j = 20;</code></pre>            
+            </li>
+            <li class="fragment">Creatable by literals
+              <ul>
+                <li><code>[]</code> is the same as <code>new Array()</code></li>
+                <li><code>{}</code> is the same as <code>new Object()</code></li>
+                <li><code>function () {}</code> is the same as <code>new Function()</code></li>
+                <li><code>/.*/</code> is the same as <code>new RegExp(".*")</code></li>
+              </ul>
+            </li>
+            <li class="fragment">Dates</li>
+          </ul>
+          <aside class="notes">
+          The primitives use transparently the methods from the wrapper object. Open Console and show example of 20. and 20.toString.
+          <p>
+          Every number is a floating point.
+          <p>All other objects are created by literals</p>
+          Arrays... maps...
+          and Dates.
+          And that's it. Those are all the objects you need to know from JavaScript, it's that simple!
+          </aside>
+        </section>           
+        
+        <section>
+          <h2>Object-oriented JavaScript</h2>
+          <p>Prototype-based programming</p>
+          <pre class="highlight javascript" style="padding:10px;font-size:28px;line-height:32px;max-height:600px">
+var Person = function (firstName) {
+  this.firstName = firstName;
+};
+
+<span class="fragment">Person.prototype.sayHello = function() {
+  console.log("Hello, I'm " + this.firstName);
+};</span>
+
+<span class="fragment">var person1 = new Person("João");
+var person2 = new Person("António");
+
+// call the Person sayHello method.
+person1.sayHello(); // logs "Hello, I'm João"
+person2.sayHello(); // logs "Hello, I'm António"</span></pre>     
+          <aside class="notes">
+          Prototype-based programming is a style of object-oriented programming that doesn't use classes, unlike Java.
+          <p>
+          Instead, behaviour reuse (also known as inheritance) is performed via a process of cloning existing 
+          objects, which are known as prototypes.
+          <p>
+          In this example, first, we define the constructor, that is, the function that gets called, whenever we want to create a new person object.
+          This is more or less equivalent to the constructor in Java.
+          <p>
+          Then, we a method sayHello to the prototype of the Person object.
+          <p>
+          Then, if we create a new Person, we can call the methods which are bound to the prototype.
+          TODO: use fragments
+          </aside>
+        </section>
+        
+        <section>
+          <h2>Object-oriented JavaScript</h2>
+          <p>Prototype-based programming</p>
+          <pre class="highlight javascript" style="padding:10px;font-size:28px;line-height:32px;max-height:600px">
+function Student(firstName, course) { 
+  Person.call(this, firstName);
+  this.course = course;
+};
+
+<span class="fragment">Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;</span>
+
+<span class="fragment">Student.prototype.sayHello = function(){
+  console.log("Hello, I'm " + this.firstName + 
+    ". I'm studying " + this.course + ".");
+}; 
+
+Student.prototype.sayGoodBye = function(){
+  console.log("Goodbye!");
+};</span></pre>     
+          <aside class="notes">
+          Let's now create a Student object, which should inherit the sayHello method from Person.
+          <p>
+          We create a Student constructor, and inside, we call the parent constructor of Person, 
+          and then we initialize our Student-specific properties, such as the course of the student.
+          <p>
+          Then, we inherit the prototype of the Person object and we assign its constructor. 
+          This is more or less equivalent to the "extends" keyword in Java.
+          <p>
+          And of course, when we do this, we have to override the constructor as well, so we reset it.
+          <p>And you can override existing methods or add new ones.</p>
+          </aside>
+        </section>   
+
+       <section data-state="alert" data-background-image="img/house-of-cards-but-why.gif">
+          <h1 class="otto" style="font-size:112px">Why JavaScript?</h1>
+          <aside class="notes">
+          Alright, so far, we have covered the history of the language, and the two programming paradigms, functional and object-oriented.
+          But you're a JavaScript hater, you must be asking but why? Why JavaScript? There are many better languages!
+          </aside>
+        </section>           
+        
+				<section data-transition="zoom">
+					<h2>Dial-up Internet Access</h2>
+					<img src="img/win95dialup.png" />
+					<audio data-autoplay src="sounds/Dial_up_modem_noises.ogg"></audio>
+          <p>28k (or 56k) telephone modem</p>
+					<aside class="notes">
+          In 1995, before broadband Internet access became widespread available, there was this thing called Dial-up Internet Access.
+          <p>
+          The sound which just played, which is very close to my heart, it's the sound of a modem connecting with another modem, across
+          the existing telephone infrastructure. It's the sound of the analog world being bridged by the digital.
+          <p>
+          It was sound of me getting connected to the Internet.
+					</aside>
+				</section>
+        
+				<section data-transition="zoom">
+					<h2>Form Validation</h2>
+					<img src="img/form-amazon.png" />
+					<aside class="notes">
+          In 1995, when use of telephone modems was widespread, a round-trip to the server was a very expensive operation. 
+					Suppose you were filling an online form, like this one on amazon, and then you click the Continue button. 
+          <p>
+          It could take 30s to get back an answer from the server.
+          <p>
+					Now imagine how annoying it would be if after waiting all that time, you received an error from the server, telling you that you forgot to fill in the phone number.
+          <p>
+					Very annoying! So one of the benefits of JavaScript at that time was perform validations on the client (the browser), before the form was submitted to the server.
+          <p>
+          Of course you should always have validations on the server-side as well, but in 1995, this was a huge benefit for the user, 
+          to see the errors right away, in real time, before sending the information to the server and waiting 30 seconds.  
+					</aside>
+				</section>               
+        
+
+				<section data-transition="zoom"> <!-- data-background-iframe="http://www.milliondollarhomepage.com/" >-->
+          <h2>Dynamic web pages</h2>
+					<input type="button" style="font-size:24px; padding: 20px" value="Add new paragraph" onclick="document.getElementById('newParagraph').style.display = '';"/>
+          <blockquote id="newParagraph" style="display:none;background-color:red">The cave you fear to enter holds the treasure you seek</blockquote>
+          <p>
+          <input type="text" style="font-size:24px; padding: 20px" placeholder="Type up to 5 characters" onkeydown="if(this.value.length>=4)alert('NOOOOOOOOOO, YOU TYPED MORE THAN 5 CHARACTERSSSSSSSS!')"/>
+          <aside class="notes">
+          Before JavaScript, web pages were completely static. You had your HTML, it was rendered, and that was it, if you want to change something,
+          you'd have to do a full page refresh.
+          <p>
+          With JavaScript, you could add interactivity to the pages, have not static, but dynamic pages.
+          <p>
+          Basic example, I click on a button, and I add a text with a red background which did not exist before in my HTML.
+          This color is just to wake you up.
+          <p>
+          Or add annoying alert messages everywhere, for example here, when I type more than 5 characters, I get an alert message.
+          This was also used to break people's computers, by sending thousands of alert messages, when you entered a page.
+          Or the more annoying ones. Where you tried to close it, and then JavaScript was changing the window somewhere else, so you could never close the window.
+          </aside>
+				</section>
+       
+				<section>
+					<h2>Browser Wars (1996-)</h2>
+					<p>Internet Explorer vs Netscape Navigator</p>
+					<p>
+						<img src="img/ie-vs-netscape.jpg" />
+					</p>
+					<img class="fragment" src="img/blink-tag.gif" width="250" />
+					<aside class="notes">
+          Then Microsoft saw what Netscape was doing, and they also decided to implement their own language, called JScript, very similar to JavaScript.
+          <p>
+					This was the beginning of the browser wars, Internet Explorer versus Netscape Navigator, with Opera represented apparently t In the end, IE won, because they tied it to Windows, which was (and still is) 
+					the most popular OS in the world.
+					They started introducing several new features to the browser, some of them completely useless, such as the blink tag, which no longer exists.
+					And with IE3, Microsoft also introduced its own JavaScript implementation called JScript (to avoid licensing issues with Netscape).
+					And all of a sudden, there were two different versions of JavaScript floating around.
+					</aside>
+				</section>
+ 
+				<section>
+						<h2>ECMAScript (1997)</h2>
+						<p>
+							<img src="./img/ecma.jpg" />
+							<div><blockquote>standardize the syntax and semantics of a general purpose, cross-platform, vendor-neutral scripting language</div>
+						</p>
+						<aside class="notes">
+						To cope with this different versions of the same language, in 1997, JavaScript was submitted to ECMA, a European standards organization, 
+						which came out with a standard that defined a new scripting language called ECMAScript, which you may see online every now and then.
+						But basically, ECMAScript is the name of the specification, and JavaScript is the concrete implementation of it.
+						</aside>
+				</section>
+        
+        <section style="top: -137px; display: block;" data-background="img/milestone.jpg" data-state="dim">
+          <h1 class="otto">JavaScript Milestones</h1>
+          <p>
+          </p>
+          <aside class="notes">
+          So this was around 1997. What happened afterwards?
+          </aside>
+        </section>   
+
+        <section>
+          <h1>Dynamic HTML (1997)</h1>
+          <blockquote>Allows the dynamic change the content and appearance of a web page</blockquote>
+          <aside class="notes">
+          </aside>
+        </section>       
+
+        <section>
+          <h2>Document Object Model</h2>
+          <p>The DOM</p>
+          <img src="img/DOM-model.png" style="width:50%; height:auto; background:white" />
+          <aside class="notes">
+          This is achieved by manipulating the Document Object Model (DOM) of the page.
+          <p>
+          As you can see, the DOM is essentially a tree, of all the elements in an HTML page,
+          starting from the document, then you have the html or root tag, then you have the head, where you put the title of the page,
+          the body...
+          </aside>
+        </section>           
+        
+        <section>
+          <h2>DOM Manipulation</h2>
+          <div>
+<pre><code data-trim style="font-size:1em;line-height:24px">
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;img id="ponies" src="http://imgur.com/ponies.png"/&gt;
+    &lt;div id="container"&gt;
+      <p>First paragraph</p>
+    &lt;/div&gt;
+  &lt;/body&gt; 
+&lt;/html&gt;			
+</pre></code> 
+</div>
+<div class="fragment">
+<pre style=""><code data-trim class="javascript" style="font-size:1.1em;line-height:26px; max-height: 600px">          
+// Get DOM elements
+var container = document.getElementById("container");
+
+// Create new DOM elements and append to existing ones
+var secondParagraph = document.createElement("p");
+secondParagraph.innerHTML = "Second paragraph";
+container.appendChild(secondParagraph);
+
+// Change existing elements
+document.getElementById("ponies.png").src = "imgur.com/pandas.png";
+
+// Iterate over existing elements
+for (var i = 0; i < container.childNodes.length; i++) {
+  console.log(container.childNodes[i].innerHTML);    
+}
+
+          </code></pre>  
+</div>          
+          <aside class="notes">
+          Changing content, changing style, showing and hiding elements, etc.
+          <p>It's essentially an API which the browser provides for you to interact with elements on the page</p>        
+          </aside>
+        </section>               
+        
+        <section>
+          <h1>XMLHttpRequest (1999)</h1>
+          <blockquote>
+          Allows the client (the browser) to asynchronously send an HTTP(S) request to a server and get back data, 
+          usually in a text format such as HTML, XML, or JSON.
+          </blockquote>
+          
+          </p>
+          <aside class="notes">
+          Developed by Microsoft for Internet Explorer 5.
+XMLHTTP changed everything. It put the “D” in DHTML. It allowed us to asynchronously get data from the server without refreshing the browser!
+
+This was originally developed by the Microsoft Outlook Web Access team, because they wanted to push some of the nice desktop features of Outlook to the browser.
+
+<p> desire to build a rich Win32 like application in a browser pushed the technology into IE that allowed AJAX to become a reality.</p>
+          </aside>
+        </section>    
+
+        <section>
+          <h1>JSON (2001)</h1>
+          <img src="img/Jason.jpg" />
+        </section>            
+        
+        <section>
+          <h1>JSON (2001)</h1>
+          <p>JavaScript Object Notation</p>
+          <img src="img/json-logo.png" style="width:50%; height:auto" />
+          <aside class="notes">
+          This was "invented" by Douglas Crackford in 2001, and I say invented, because it's nothing new.
+
+          But his idea was to use JavaScript syntax to store data in text format.
+          </aside>
+        </section>      
+        
+        <section>
+          <h2>JSON (2001)</h2>
+          <p>A JavaScript-based data exchange format</p>
+          <pre><code data-trim class="javascript" style="font-size:1.4em;line-height:38px">
+{
+  "name": "João Silva",
+  "employer": "CERN",
+  "title": "Software Engineer",
+  "married": false,
+  "born": 1986,
+  "interests": [ "Ponies", "Chocolate" ]
+}</code></pre>          
+          <aside class="notes">
+          JSON uses JavaScript literals for strings, arrays, objects, booleans, to represent structured data.
+          <p>
+          Over the years, JSON became an alternative to XML, especially when you want to represent data, and not markup.
+          <p>
+          And of course, since JSON itself is JavaScript, it's very very easy to consume, in well, JavaScript. So METAAAA.  
+          </aside>
+        </section>             
+
+        <section>
+          <h1>AJAX (2005)</h1>
+          <img src="img/ajax.jpg" />
+          <aside class="notes">
+          Then in 2005, came AJAX!
+          </aside>
+        </section>            
+        
+        <section>
+          <h2 style="word-wrap:none">Async JavaScript and XML</h2>
+          <p></p>
+          <img src="img/AJAX-logo.jpg" style="width:50%;height:auto"/>
+          <ol>
+            <li class="fragment">Load content asynchronously in the background, via <code>XMLHttpRequest</code>
+            <li class="fragment">Dynamically update the current page with the results of the request, via Dynamic HTML</li>
+          </ol>
+          <aside class="notes">
+          AJAX marked the mainstream breakthrough of JavaScript and dynamic web applications. With AJAX you could change your page in a dynamic way, without
+          the user ever having to refresh the browser!
+          <p>
+          But wait a minute. Wasn't that what I just showed you with the XMLHttpRequest? Yes, indeed, AJAX was not in fact something new, it was was just using existing technologies, and putting them all together, namely:
+          <p>
+          XMLHttpRequest
+          and manipulating the DOM or dynamic html.
+          </aside>
+        </section>   
+
+        <section>
+          <h2>AJAX Interaction</h2>
+          <img src="img/ajax_interaction.gif" />
+          <aside class="notes">
+          Here's a typical AJAX interaction diagram.
+          </aside>
+        </section>     
+
+        <section>
+          <h2>AJAX Interaction</h2>
+<pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:34px; max-height: 600px">
+// Create XMLHttpRequest object
+var ajaxRequest = new XMLHttpRequest();
+
+// Event handler for asynchronous requests
+ajaxRequest.onreadystatechange = function() {
+  if (ajaxRequest.readyState == 4) {
+    var container = document.getElementById("container");
+    container.innerHTML = ajaxRequest.responseText; 
+  }
+}
+ajaxRequest.open("GET", "serverTime.php", true);
+ajaxRequest.send(null); 
+</code></pre>
+          <div class="fragment">
+          <input  type="button" style="font-size:24px; padding: 20px" value="Ajax Request" onclick="document.getElementById('containerAjax').innerHTML = new Date();"/>
+          <div id="containerAjax" style="">This is the container</div>
+          </div>
+          <aside class="notes">
+          First thing, we create a request...
+          </aside>
+        </section>         
+
+        <section>
+          <h1>jQuery (2006)</h1>
+          <img src="img/jquery.png" style="background:white" />
+          <aside class="notes">
+          The Write Less, Do More, JavaScript Library.
+          </aside>
+        </section>      
+        
+        <section>
+          <h2>Cross-browser DOM Manipulation is hard</h1>
+<pre style=""><code data-trim class="javascript" style="font-size:1.3em;line-height:38px; max-height: 600px">
+var checkbox = document.getElementById("myCheckbox"):
+if (checkbox.addEventListener) {
+  checkbox.addEventListener("click", setCheckedValues);
+} else {
+  checkbox.attachEvent("onclick", setCheckedValues);
+}
+</code></pre>
+          <aside class="notes">
+          <p>jQuery was created because Cross-browser DOM Manipulation is hard.
+          <p>For example, adding function that will be called whenever someone clicks a particular checkbox.
+          <p>In IE, you use addEventListener, and every other browser uses attachEvent.
+          <p>Also, the name of the event is different.
+          <p>In IE, it's called click, on the other onclick.
+          </aside>
+        </section>    
+        
+        <section>
+          <h2>jQuery</h1>
+<pre style=""><code data-trim class="javascript" style="font-size:1.6em;line-height:42px; max-height: 600px">
+var checkbox = $("#myCheckbox");
+checkbox.on('click', setCheckValues);
+</code></pre>
+          <aside class="notes">
+          jQuery made DOM manipulation fun and simple, by abstracting over browser differences and by providing a powerful fluent-api,
+          for finding elements and modifying the DOM.
+          This API is based on CSS, and I'll talk a bit more in detail about jQuery and CSS Selectors in my other talk tomorrow.
+          </aside>
+        </section>          
+
+        <section>
+          <h2>AJAX without jQuery</h1>
+<pre style=""><code data-trim class="javascript" style="font-size:1em;line-height:28px; max-height: 600px">
+var ajaxRequest;
+try {
+  // Opera 8.0+, Firefox, Safari
+  ajaxRequest = new XMLHttpRequest();
+} catch (e){
+  // Internet Explorer Browsers
+  try {
+    ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+  } catch (e) {
+    try {
+      ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (e){
+      // Something went wrong
+      alert("Your browser broke!");
+      return false;
+    }
+  }
+}
+</code></pre>
+          <aside class="notes">
+          It also provided lots of utility methods to simplify development.
+          For example, before jQuery (BJ), this is the code to do an AJAX request.
+          </aside>
+        </section>       
+
+        <section>
+          <h2>AJAX with jQuery</h1>
+<pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:38px; max-height: 600px">
+$.get("serverTime.php")
+  .success(function (result) {
+    console.log(result);
+  })
+  .error(function (error)) {
+    alert("Your browser broke!");
+  };
+</code></pre>
+          <aside class="notes">
+          And with jQuery, every browser-specific code is hidden by the library, and you use this nice $.get function.
+          </aside>
+        </section>                 
+
+					<section>
+						<h2>V8 (2008)</h2>
+						<p>JavaScript can be fast.</p>
+            <img src="img/Chrome-V8.jpg" style="width:50%;height:auto"/>
+						<p>Google's open source JavaScript engine</p>
+						<aside class="notes">
+						One of the most important reasons is the rise of faster JavaScript engines, namely, V8.
+						V8 is Google's open source JavaScript engine, used for the Google Chrome web-browser.
+						Whenever you run JavaScript on Chrome, it's executed by V8.
+						</aside>
+					</section>	
+					<section>
+                        <h2>V8 features</h2>
+                        <div>
+                            <ul>
+                                <li>Written in C++</li>
+								<li class="fragment">Compiles JavaScript directly into machine code</li>
+								<li class="fragment">Runtime profiler which identifies hot functions</li>
+								<li class="fragment">Can run standalone or can be embedded as a library</li>
+                            </ul>
+                            <div style="text-align: left;">
+                                <br>
+                            </div>
+                        </div>
+						<div class="fragment">
+							<div style="text-align: center;">Blazingly fast</div>
+							<div style="text-align: center;">
+								<img src="./img/fast-cheetah.gif">
+							</div>
+						</div>
+						<aside class="notes">
+						It's written in C++.
+						<p>It uses a Just-in-Time compiler to compile JavaScript source code directly into machine code when it is first executed.
+						There is no intermediate bytecode, no interpreter.</p>
+						<p>Then it has a profiler which identifies hot functions, and recompiles them with another compiler, which
+						produces even more optimized code</p>
+						<p>It's blazingly fast</p>
+						</aside>
+          </section>			        
+        
+					<section>
+						<h2>node.js (2009)</h2>
+						<p>
+							<img style="background-color:white" src="./img/nodejs-logo.png" />
+						</p>
+						<p><q>Server-side JavaScript</q></p>
+						<aside class="notes">
+            And V8 is the engine which allowed node.js to be created!
+						node.js, in a very simplistic way, is server-side JavaScript.
+            While the idea can be questionable, doing javascript on both the server and the client.
+						</aside>
+					</section> 
+
+          <section>
+            <h2>NODE.JS HTTP Server</h2>
+<pre><code class="javascript" style="font-size:1.2em;line-height:34px">var http = require('http');
+
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {'Content-Type': 'text/html'});
+  response.end('&lt;h1&gt;Hello World&lt;/h1&gt;');
+});
+server.listen(1337);
+
+console.log('Server running at http://127.0.0.1:1337/');
+</code></pre>
+          <aside class="notes">
+          And with just 7 lines, you can create a very simple web server with JavaScript!
+          </aside>
+          </section>
+
+        <section data-state="dim" style="top: -137px; display: block;" data-background="img/modern-times.jpg">
+          <h1 class="otto">Modern-day JavaScript</h1>
+          <p>
+          </p>
+          <aside class="notes">
+          Alright, so far, I've discussed the past of JavaScript, all the way from its creation in 1995 up until 2009 with node.js.
+          Now we enter a new era, Modern-day JavaScript.
+          </aside>
+        </section>     
+        
+        <section data-background-image="img/excited.gif">
+          <aside class="notes">
+            And this is the current state of JavaScript, everyone's excited and talking about it (good or badly, but talking about it).
+          </aside>
+        </section> 
+
+        <section>
+						<h2>JavaScript is cool now</h2>
+						<p>
+							<img src="./img/batman-unicorn-dolphins.jpg" style="width:280px; height:auto" />
+						</p>
+						<ul>
+							<li class="fragment">Top Language on GitHub for 2015 (> 300k repositories)</li>
+              <li class="fragment">Top Language on StackOverflow of all time!</li>
+							<li class="fragment">Used for Web servers, Desktop applications, Presentations...</li>
+						</ul>
+						<aside class="notes">						
+						And of course, JavaScript is cool now.
+						<p>It's the top language on GitHub in terms of repositories.
+            <p>This year, it has overcome Java this year on StackOverflow, and it's now the top language of all time
+						<p>It's used for web servers, desktop applications, presentations like this one, and also...
+						</aside>
+					</section>
+          
+					<section data-state="demo">
+						<h2>...Games</h2>
+						<canvas id="game-red" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+						<div id="escapeBirds" style="font-size:11px;cursor:pointer">sos</div>
+						<aside class="notes">
+						Games. This one for example, is just a few lines of JavaScript, using the boxbox physics engine.
+						</aside>
+					</section>
+
+          <section>
+              <h2>Atwood's Law</h2>
+              <blockquote>Any application that can be written in JavaScript, will eventually be written in JavaScript.</blockquote>
+              <cite><small><span>- </span><span>Jeff Atwood, Coding Horror</span></small></cite>
+              <aside class="notes">
+                There's even a new computer science law by Jeff Atwood, the creator of StackOverflow, which says.
+              </aside>
+          </section>          
+					
+					<section>
+						<h2>End-to-End JavaScript</h2>
+						<p>
+							<img style="vertical-align:middle;height:124px;width:494px" src="./img/mean.jpg" />
+							<div style="font-size: 72px;">→</div>
+						</p>
+						<aside class="notes">
+					One of the most used stacks for doing that, is the MEAN stack. It's a typical three-tier architecture.
+					It has node.js as the server-side JavaScript platform.
+					Express as the web application framework.
+					MongoDB as the database.
+					And AngularJS, for the client-side.
+					This allows you use what I call <strong>monoglot programming</strong>, a single language, JavaScript, for the entire stack.            
+						With NODE.JS of this nice features, the idea of end-to-end JavaScript was brought back to life.
+						</aside>
+					</section>
+
+				<section>
+					<h2>The MEAN Stack</h2>
+					<p>
+						<img style="background-color:white" src="./img/mean-diagram-3.png" width="800" />
+					</p>				
+					<p>Monoglot programming</p>
+					<aside class="notes">
+					One of the most used stacks for doing that, is the MEAN stack. It's a typical three-tier architecture.
+					It has node.js as the server-side JavaScript platform.
+					Express as the web application framework.
+					MongoDB as the database.
+					And AngularJS, for the client-side.
+					This allows you use what I call <strong>monoglot programming</strong>, a single language, JavaScript, for the entire stack.
+					</aside>
+				</section>          
+
+        <section>
+          <h1>Client-side frameworks</h1>
+          <ul>
+            <li>Angular by Google</li>
+            <li>Ember</li>
+            <li>React by Facebook</li>
+            <li>Polymer by Google</li>
+            <li>And many many many many many many more...</li>
+          </p>
+          <aside class="notes">
+          In fact, there's a joke website that counts the number of hours since the last framework.
+          </aside>
+        </section>   
+
+        <section>
+          <h2>History of JavaScript frameworks</h2>
+          <p>
+            <img style="background-color:white" src="./img/javascript-frameworks.jpg" width="600" />
+          </p>        
+        </section>
+
+        <section>
+          <h2>2016 Hot JavaScript frameworks</h2>
+          <p>
+            <img style="background-color:white" src="./img/2016-frameworks.jpg" width="600" />
+          </p>        
+        </section>        
+
+        <section>
+						<h2>Web Components</h2>
+						<p>
+							<img style="background-color: white;" src="./img/web-components.png" />
+						</p>
+				</section>	            
+        <section>
+						<h2>AngularJS</h2>
+						<p>
+							<img style="background-color: white;" src="./img/AngularJS_logo.svg" />
+						</p>
+						<p>Superheroic JavaScript MVW Framework</p>
+					</section>				        
+					<section>
+						<h2>AngularJS Directives</h2>
+						<p>Extend the HTML vocabulary</p>
+<pre class="fragment" style="width:40%;font-size:40px"><code>&lt;pacman&gt;&lt;/pacman&gt;
+</code></pre>						
+<pre class="fragment"><code class="javascript" style="font-size:1.4em;line-height:32px">var app = angular.module('app',[]);
+
+app.directive('pacman', function() {
+  return {
+    // E = Element, A = Attribute, C = Comment
+    restrict: 'E',  
+    replace: true,
+    template: "&lt;div&gt;&lt;img src='pacman.gif'/&gt;&lt;/div&gt;"
+  };
+});
+</code></pre>
+					<p class="fragment">
+						<img style="background-color:white" src="./img/pacman.gif" width="100" height="100" border="0" />
+						<!-- Use black background? -->
+					</p>
+					<aside class="notes">
+					</aside>
+					</section>	
+          
+          <section>
+            <h2>React</h2>
+            <p>
+              <img style="background-color: white;" src="./img/React.svg" width="35%"/>
+            </p>
+            <p>A JavaScript library for building user interface</p>
+          </section>
+
+          <section>
+            <h2>React Components</h2>
+            <p>JSX</p>
+<pre class="fragment"><code class="" style="font-size:1.4em;line-height:32px">var Pacman = React.createClass({
+    render: function() {
+        return <div><img src='pacman.gif'/></div>;
+    }
+});
+ 
+ReactDOM.render(&lt;Pacman/&gt;, document.body);
+</code></pre>
+          <aside class="notes">
+          React Components. More or less the same goal as Angular directives.
+          Create custom HTML elements.
+          They also introduced something new and very interesting, which is called JSX.
+          JSX essentially allows you to combine JavaScript and HTML.
+          Like this, you avoid using a templating engine, or string concatenation to create your HTML.
+          </aside>
+          </section>                          
+
+        <section>
+          <h1 class="otto">JavaScript Tooling</h1>
+          <ul>
+          <li><h2>Linting</h2></li>
+          <li><h2>Minification</h2></li>
+          <li><h2>Testing</h2></li>
+          <li><h2>Build and Task Automation</h2></li>
+          </ul>
+          <aside class="notes">
+          Let's now talk about JavaScript tooling.
+          </aside>
+        </section>      
+
+        <section>
+          <h1>Linting</h1>
+          <blockquote>is the process of running a program that will analyse code for potential errors.</blockquote>
+          <aside class="notes">
+          </aside>
+        </section>   
+        
+        <section>
+          <h2>Code Quality Tool</h2>
+          <img src="img/linting.png" />
+          <aside class="notes">
+          </aside>
+        </section>   
+
+        <section>
+          <h1>Linting Tools</h1>
+          <ul>
+            <li>JSHint (first linting tool, by Douglas Crockford)</li>
+            <li><a href="http://www.jslint.com/">JSLint</a> (successor of JSHint)</li>
+            <li><a href="http://eslint.org/">ESLint</a> (<i>de-facto</i> standard)</li>
+            <aside class="notes">
+            ESLint also works with JSX.
+            </aside>
+        </section>           
+
+        <section>
+          <h1>Minification</h1>
+          <blockquote>is the process of removing all unnecessary characters from source code without changing its functionality.</blockquote>
+          <aside class="notes">
+          As code grows bigger and bigger... as applications use more and more JavaScript, your files get bigger.
+          The payload of your application will require more time to load your application.
+          Solutions have arised for this, such as sending compressed data to the client.
+          Another one, is minification.
+          JSMin removes comments and unnecessary whitespace from JavaScript files..
+          </aside>
+        </section> 
+        <section>
+          <h1>Minification</h1>
+          <div style="position:absolute;left:0px;display:block-inline;">
+          <p>Before</p>
+          <img src="img/js-minification-before.png" />
+          </div>
+          <div class="fragment" style="float:right;display:block-inline;">
+          <p>After</p>
+          <img src="img/js-minification-after.png" />
+          </div>
+          <aside class="notes">
+          JSMin removes comments and unnecessary whitespace from JavaScript files..
+          </aside>
+        </section>          
+        <section>
+          <h1>Minification</h1>
+          <ul>
+            <li><a href="http://www.crockford.com/javascript/jsmin.html">JSMin</a> (original, by Douglas Crockford)</li>
+            <li><a href="http://yui.github.io/yuicompressor/">YUI Compressor</a></li>
+            <li><a href="https://github.com/mishoo/UglifyJS">UglifyJS</a></li>
+            <li><a href="https://developers.google.com/closure/compiler/">Google Closure Compiler</a></li>
+            <li><a href="http://dean.edwards.name/packer/" target="_blank">Packer</a></li>
+            <li>Source Maps ("reverse" minification)</li>
+            <aside class="notes">
+            As code grows bigger and bigger..
+            JSMin removes comments and unnecessary whitespace from JavaScript files..
+            Source Maps is not really a minification tool, it's actually a reverse.
+            </aside>
+        </section>                 
+
+        <section>
+          <h1>Testing</h1>
+          <ul>
+            <li>Unit testing (qUnit)</li>
+            <li>Behaviour-driven development (Jasmine)</li>
+            <li>Behaviour-driven development (Mocha)</li>
+          </ul>
+          <aside class="notes">
+          One of the common complaints against JavaScript, was that it couldn't be tested.
+          That's false.
+          You can, and you should.
+          Currently, there are three standards in the industry for testing in JavaScript.
+          </aside>
+        </section>  
+        
+        <section>
+          <h1>Jasmine</h1>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:38px; max-height: 600px">          
+describe("A suite", function() {
+  it("expects 1+1 to be 2", function() {
+    expect(1+1).toBe(2);
+  });
+});        
+</code></pre> 
+        <aside class="notes">
+        Similar to Spock, like Pavel talked about yesterday, also with a very powerful assertion mechanism.
+        </aside>
+        </section>
+        
+        <section data-background-image="img/building.jpg" data-state="dim">
+          <h1 class="otto">Build and Task Automation</h1> 
+        </section>
+
+        <section>
+          <h1>Build and Task Automation</h1>
+          <p>Gulp vs Grunt</p>
+          <img src="img/gulp-vs-grunt.gif" />        
+          <aside class="notes">
+          Task automation.
+          </aside>
+        </section>              
+        
+        <section>
+          <h2>Gulp</h2>
+                  <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:38px; max-height: 600px">          
+var gulp = require('gulp'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    mocha = require('gulp-mocha');
+
+gulp.task('js', function () {
+   return gulp.src('js/*.js')
+      .pipe(jshint())
+      .pipe(jshint.reporter('default'))
+      .pipe(uglify())
+      .pipe(concat('app.js'))
+      .pipe(mocha())
+      .pipe(gulp.dest('build'));
+});          
+          </code></pre>   
+        <aside class="notes">
+          Gulp is a streaming build system. The output of one task, will be the input of the other.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Dependency Management</h2>
+          <p>npm (client- and server-side)</p>
+          <img src="img/npm.svg" width="400" style="background: white"/>
+          <br/>
+          <p>Bower (client-side)</p>
+          <img src="img/bower.png" width="250" style="background: white"/>
+        </section>
+
+<section>
+          <h2>npm as a build tool</h2>
+                  <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:38px; max-height: 600px">          
+"scripts": {
+  "info": "echo 'npm as a build tool'",
+  "lint": "echo '=> linting' && jshint assets/scripts/*.js",
+  "test": "echo '=> testing' && mocha test/",
+  "minify:js": "echo '=> minify:js' && uglifyjs assets/scripts/main.js -o dist/public/js/jquery.min.js",
+  "minify:css": "echo '=> minify:css' && cleancss assets/css/main.css -o dist/public/css/main.min.css",
+  "build": "echo '=> building' && npm run test -s && npm run minify:js -s && npm run minify:css -s",
+  "pretest": "npm run lint -s"
+}
+          </code></pre>   
+        <aside class="notes">
+          
+          </aside>
+        </section>
+        
+        <!-- ECMAScript 6 -->
+
+       <section>
+          <h1 class="otto">The Future of JavaScript</h1>
+        </section>
+
+        <section data-state="alert" class="present" style="top: -137px; display: block;">
+          <h1>ECMAScript 6</h1>
+          <p>
+          Get ready for the future. <strong>Now</strong>.
+          </p>
+          <aside class="notes">
+          The future brings many exciting developments for JavaScript.
+          ECMAScript 6, or ECMAScript 2015, will fix quirks and add new features.
+          It evolves the language.
+          Let's have a look at some of those features.
+          </aside>
+        </section>  
+        
+        <section>
+          <h2>Classes</h2>
+          <div class="fragment">
+          <p>ES5</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:28px; max-height: 600px">          
+var Person = function (firstName) {
+  this.firstName = firstName;
+};
+
+Person.prototype.sayHello = function() {
+  console.log("Hello, I'm " + this.firstName);
+};
+          </code></pre>
+          </div>
+          <div class="fragment">
+          <p>ES6</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:28px; max-height: 600px">          
+class Person {
+  constructor(firstName) {
+    this.firstName = firstName;
+  }
+         
+  sayHello() {
+    console.log("Hello, I'm " + this.firstName);
+  }
+}
+          </code></pre>  
+          </div>
+          <aside class="notes">
+          </aside>
+        </section>        
+
+        <section>
+          <h2>Inheritance</h2>
+          <p>ES5</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:28px; max-height: 600px">          
+function Student(firstName, course) { 
+  Person.call(this, firstName);
+  this.course = course;
+};
+
+Student.prototype = Object.create(Person.prototype);
+Student.prototype.constructor = Student;
+
+Student.prototype.sayHello = function() {
+  console.log("Hello, I'm " + this.firstName + 
+    ". I'm studying " + this.course + ".");
+}; 
+
+Student.prototype.sayGoodBye = function() {
+  console.log("Goodbye!");
+};
+          </code></pre>
+          <aside class="notes">
+          </aside>
+        </section>       
+
+        <section>
+          <h2>Inheritance</h2>
+          <p>ES6</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:28px; max-height: 600px">          
+class Student extends Person {
+  constructor(firstName, course) {
+    super(firstName);
+    this.course = course;
+  }
+  
+  sayHello() {
+    super.sayHello();
+    console.log("I'm studying " + this.course + ".");
+  }
+         
+  sayGoodBye() {
+    console.log("Goodbye");
+  }
+}
+          </code></pre>
+          <aside class="notes">
+          You have also now have getters, setters, static methods, everything a "normal" object-oriented language has.
+          </aside>
+        </section>           
+        
+        <section>
+          <h2>Arrow Functions</h2>
+          <div class="fragment">
+          <p>ES5</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:28px; max-height: 600px">          
+var ponies = ["Applejack", "Pinkie Pie", "Aloe","Cheerilee"];
+
+ponies.forEach(function (eachPony, index) {
+  console.log(index + 1 + ". " + eachPony);
+});
+          </code></pre>
+          </div>
+          <div class="fragment">
+          <p>ES6</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:28px; max-height: 600px">          
+var ponies = ["Applejack", "Pinkie Pie", "Aloe","Cheerilee"];
+
+ponies.forEach((eachPony, index) => {
+  console.log(index + 1 + ". " + eachPony);
+});
+          </code></pre>  
+          </div>
+          <aside class="notes">
+          Arrows a function shorthand. For example, lets' take the example from before.
+          We pass an anonoymous function, or a lambda.
+          <p>
+          And the new version, using arrow functions.
+          <p>
+          Nothing special, just a bit shorter, with less characters to type.
+          <p>
+          There's also another aspect, which is the way arrow functions deal with the lexical "this".
+          </aside>
+        </section>     
+        
+          <section>
+          <h2>Arrow Functions</h2>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:28px; max-height: 600px">          
+let square = x => x * x;
+let add = (a, b) => a + b;
+let pi = () => 3.1415;
+
+console.log(square(5));
+console.log(add(3, 4));
+console.log(pi());
+          </code></pre>
+          <aside class="notes">
+          Arrows a function shorthand. For example, lets' take the example from before.
+          We pass an anonoymous function, or a lambda.
+          <p>
+          And the new version, using arrow functions.
+          <p>
+          Nothing special, just a bit shorter, with less characters to type.
+          <p>
+          There's also another aspect, which is the way arrow functions deal with the lexical "this".
+          </aside>
+        </section>          
+
+        <section>
+          <h2>Block-scope</h2>
+          <div>
+          <p>ES5 Function-scoped binding constructs</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:28px; max-height: 600px">          
+function addLinks () {
+  for (var i = 0, link; i < 5; i++) {
+    link = document.createElement("a");
+    link.innerHTML = "Link " + i;
+    link.onclick = function () {
+      alert(i);
+    };   
+    document.body.appendChild(link);
+  }
+}
+          </code></pre>
+          </div>
+          <input type="button" style="font-size:24px; padding: 20px" value="Add Links" onclick="addLinks();return false;"/> 
+          <div id="linkContainer"></div>
+          <aside class="notes">
+          </aside>
+        </section> 
+        
+        <section>
+          <h2>Block-scope</h2>
+          <div>
+          <p>ES5 Block-scoped binding constructs</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:28px; max-height: 600px">          
+function addLinks () {
+  for (var i = 0, link; i < 5; i++) {
+    link = document.createElement("a");
+    link.innerHTML = "Link " + i;
+    link.onclick = function (num) {
+      return function () {
+        alert(num);
+      };
+    }(i);
+    document.body.appendChild(link);
+  }
+}
+          </code></pre>
+          </div>
+          <input type="button" style="font-size:24px; padding: 20px" value="Add Links" onclick="addLinks2();return false;"/> 
+          <div id="linkContainer2"></div>
+          <aside class="notes">
+          </aside>
+        </section>   
+
+        <section>
+          <h2>Block-scope</h2>
+          <div>
+          <p>ES6 <code>let</code> keyword</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.2em;line-height:28px; max-height: 600px">          
+function addLinks () {
+  for (let i = 0, link; i < 5; i++) {
+    link = document.createElement("a");
+    link.innerHTML = "Link " + i;
+    link.onclick = function (num) {
+      alert(i);
+    };
+    document.body.appendChild(link);
+  }
+}
+          </code></pre>
+          </div>
+          <aside class="notes">
+          </aside>
+        </section>      
+        
+        <section>
+          <h2>Default parameters</h2>
+          <div>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:36px; max-height: 600px">          
+function sayMsg(msg='This is a default message') {
+  console.log(msg);
+}
+
+sayMsg(); // This is a default message
+sayMsg('I <3 ponies!'); // I <3 ponies
+          </code></pre>
+          </div>
+          <aside class="notes">
+          </aside>
+        </section>      
+
+        <section>
+          <h2>Spread Operator</h2>
+          <div>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:36px; max-height: 600px">          
+function add(a, b) {
+  return a + b;
+}
+
+let nums = [5, 4];
+
+console.log(add(...nums));
+
+          </code></pre>
+          </div>
+          <aside class="notes">
+          </aside>
+        </section>    
+
+
+        <section>
+          <h2>Destructuring assignment</h2>
+          <p>ES5</p>
+          <div>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:36px; max-height: 600px">          
+var foo = ["one", "two", "three"];
+
+var one   = foo[0];
+var two   = foo[1];
+var three = foo[2];</code></pre>
+          </div>
+          <div class="fragment">
+          <p>ES6</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:36px; max-height: 600px">          
+var [one, two, three] = foo;</code></pre>
+          </div>          
+          <aside class="notes">
+          Thanks to destructuring assignment, functions can return multiple values.
+          https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+          </aside>
+        </section>                    
+
+        <section>
+          <h2>Template Strings</h2>
+          <div class="fragment">
+          <p>ES5</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:36px; max-height: 600px">          
+var name = "João";
+var time = "today";
+console.log("Hello " + name + ", how are you " 
+  + time + "?");
+          </code></pre>
+          
+<pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:36px; max-height: 600px">          
+// Hello João, how are you today?
+          </code></pre>          
+          </div>
+          <div class="fragment">
+          <p>ES6</p>
+          <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:36px; max-height: 600px">          
+let name = "João";
+let time = "today";
+console.log(`Hello ${name}, how are you ${time}?`);
+          </code></pre>
+          
+<pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:36px; max-height: 600px">          
+// Hello João, how are you today?
+          </code></pre>          
+          </div>
+          <aside class="notes">
+          </aside>
+        </section>  
+
+        <section>
+          <h2>Modules</h2>
+          <div class="fragment">
+          <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:36px; max-height: 600px">          
+// math.js
+var double = function(x) {
+  return x + x;
+}
+
+var square = function(x) {
+  return x * x;
+}
+
+export { double, square }
+          </code></pre>
+          </div>
+          <div class="fragment">
+          <pre style=""><code data-trim class="javascript" style="font-size:1.4em;line-height:36px; max-height: 600px">          
+// client.js
+import { double, square } from 'math';
+double(2);
+square(3);
+          </code></pre>
+          </div>          
+          <aside class="notes">
+          Browserify and Webpack
+          </aside>
+        </section>           
+      
+        <section data-background-image="http://i.giphy.com/90F8aUepslB84.gif">
+          <h2>... and there's more!</h2>
+        </section>          
+        
+        <section>
+					<h1>Many more features...</h1>
+          <ul>
+            <li><h2>Generators</h2></li>
+            <li><h2>Promises</h2></li>
+            <li><h2>Iterators</h2></li>
+            <li><h2>etc.</h2></li>
+          </ul>     
+        </section>
+        
+				<section>
+					<h1>Using ES6 today</h1>
+          <p>Transpilers (source-to-source compilers)</p>
+          <div>
+            <img src="img/babel.png" style="width:25%; height:auto" />
+          </div>
+          <ul>
+            <li><a href="https://babeljs.io">Babel</a></li>          
+            <li><a href="https://code.google.com/p/traceur-compiler/">Traceur</a></li>
+            <li><a href="http://www.es6fiddle.net">http://www.es6fiddle.net/</a></li>
+          </ul>
+          <aside class="notes">
+          Even though ES6 is not yet available in all browsers, you can already try it today.
+          <p>
+          There are now tools called transpilers, our source-to-source compilers, such as Traceur, by Google.
+          <p>
+          And perhaps the most famous one, Babeljs, which take your code in ES6, and transform or transpile it to ES5.
+          <p>
+          Use this step in the build system.
+          </aside>          
+        </section>  
+        
+				<section>
+					<h1>Takeaways</h1>
+					<ul>
+						<li>JavaScript is the de-facto language of the Web</li>
+            <li class="fragment">JavaScript is not going away anytime soon</li>
+            <li class="fragment">You might as well learn a thing or two about it, just in case</li>
+					</ul>
+					<aside class="notes">
+          Dynamic web applications led to JavaScript's initial popularity.
+          <p>
+          The Web became an ecosystem for applications, and you need JavaScript for it.
+          <p>
+          JavaScript has become fast due to modern engines.
+          <p>
+          Server-side JavaScript like node.js and now io.js, allow you use the same langauge on bioth the server
+          and the client.
+          <p>
+          Node.js also allows you to build tooling and scripts.
+          <p>
+          It's the most open programming langauge there is.
+          
+          It's the most popular programming language of the world.
+          Others have tried to replace it, such as GWT, Dart, Coffeescript, and they all failed.
+          One thing is clear, it's not going away anytime soon.
+          You might as well learn a thing or two about it, just in case.
+					</aside>          
+				</section>
+
+				<section data-background-image="img/thats-all-folks.gif">
+					<aside class="notes">
+					That kind of wraps it up. Thank you for listening to me.
+					We have just scratched the surface of a big ocean.
+					</aside>
+				</section>        
+        
+			</div>
+
+		</div>
+    <script src="lib/js/jquery-1.9.1.js"></script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+    <script type="text/javascript">
+function addLinks () {
+  for (var i = 0, link; i < 5; i++) {
+    link = document.createElement("a");
+    link.innerHTML = "Link " + i + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+    link.onclick = function () {
+      alert(i);
+    };
+    document.getElementById("linkContainer").appendChild(link);
+  }
+}
+function addLinks2 () {
+  for (var i = 0, link; i < 5; i++) {
+    link = document.createElement("a");
+    link.innerHTML = "Link " + i + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        link.onclick = function (num) {
+            return function () {
+                alert(num);
+            };
+        }(i);
+    document.getElementById("linkContainer2").appendChild(link);
+  }
+}
+    </script>
+
+    <script src="lib/js/Box2dWeb-2.1.a.3.min.js"></script>
+		<script src="lib/js/boxbox.min.js"></script>
+		<script src="lib/js/keyDecode.js"></script>
+		<script src="lib/js/game-red.js"></script>
+    
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					//{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+              [].forEach.call( document.querySelectorAll( '.highlight, pre code' ), function( v, i) {
+                  hljs.highlightBlock(v);
+              });
+          } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+      
+      
+			Reveal.addEventListener( 'ready', function( event ) {
+			    if ( $( Reveal.getCurrentSlide() ).data( "state" ) === "demo" ) {
+			    	if ( !game.isRunning ) game.run();
+				    Reveal.removeEventListeners();
+			    } else {
+				    Reveal.addEventListener();
+			    }
+			} );
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				var $currentSlide = $( Reveal.getCurrentSlide() );
+			    if ( $currentSlide.data( "state" ) === "demo" && $currentSlide.find( "canvas" ).length ) {
+			    	if ( !game.isRunning ) game.run();
+				    Reveal.removeEventListeners();
+			    } else {
+				    Reveal.addEventListeners();
+			    }
+			} );
+			Reveal.addEventListener( 'demo', function() {
+		    	if ( !game.isRunning ) game.run();
+			    Reveal.removeEventListeners();
+			}, false );	      
+
+		</script>
+
+	</body>
+</html>

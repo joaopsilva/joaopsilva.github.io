@@ -1,0 +1,143 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+@import url('http://fonts.googleapis.com/css?family=Medula+One');
+
+.reveal .slides section .fragment.current-hidden {
+  display: none;
+}
+.reveal .slides section .fragment.current-hidden.current-fragment {
+  display: block;
+}
+
+
+.reveal .slides section .fragment.highlight-current-yellow {
+  opacity: 1;
+  visibility: visible; 
+}
+
+.reveal .slides section .fragment.highlight-current-yellow.current-fragment {
+  color: #f9c300; 
+}
+
+.reveal blockquote {
+}
+
+.reveal table th,
+.reveal table td {
+  border-bottom: 1px solid #f9c300 !important;
+}
+
+html.cover .backgrounds {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../img/cover.jpg) !important;
+  background-size: cover !important;
+  /*-webkit-filter: blur(0px) saturate(1.0) brightness(.9);*/
+  /*height: 125%;*/
+}
+
+html.steps .backgrounds {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../img/steps.jpg) !important;
+  background-size: cover !important;
+}
+
+html.toolbox .backgrounds {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../img/toolbox.jpg) !important;
+  background-size: cover !important;
+}
+
+html.spiderman .backgrounds {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../img/spider-man-wallpaper.jpg) !important;
+  background-size: cover !important;
+}
+
+
+html.logical .backgrounds {
+  
+}
+
+.subtitle {  
+  font-size: 86px !important;
+  font-weight: 400 !important;
+  letter-spacing: 1px !important;
+  text-transform: none !important;
+
+  background-color: rgba(255,255,255,0.1);
+  text-shadow: 2px 2px 0 #444 !important;  
+  font-family: 'Medula One', cursive !important;
+}
+
+.title {
+  /*background: #0e8dbc;*/ 
+  /*font-family: "Open Sans", sans-serif !important;*/
+  /*font-weight: 400 !important;*/
+  
+  background-color: rgba(255,255,255,0.1) !important;
+  font-size: 114px !important;
+  text-transform: none !important;
+  color: white;  
+
+  text-shadow: 5px 5px 0 #444 !important;
+  line-height: 1.1em !important;
+}
+
+.arcade {
+  font-family: "League-Gothic", Courier !important;
+  font-size: 200px; text-transform: uppercase !important;
+  color: #fff;
+  text-shadow: 10px 10px 0 #ffd217, 
+    20px 20px 0 #5ac7ff, 
+    30px 30px 0 #ffd217, 
+    40px 40px 0 #5ac7ff !important;
+}
+
+.letterpress {
+  font-size: 112px !important;
+
+  color: #222;
+  /*text-shadow: 0px 2px 3px #555 !important;*/
+  text-shadow:
+  1px 1px 0 #CCC,
+  2px 2px 0 #CCC, 
+  3px 3px 0 #444,
+  4px 4px 0 #444,
+  5px 5px 0 #444,
+  6px 6px 0 #444 !important; /* end of 4 level deep dark shadow */
+}
+
+.extruded {
+  font-size: 112px !important;
+  font-family: Blue Highway; Arial Black, sans-serif;
+  text-align: center;
+  letter-spacing: 1rem;
+  text-shadow:0 .01em 0px #dededa,
+  0 .015em 0 #dededa,
+  0 .02em  0 #dededa,
+  0 .028em 0 #dededa,
+  0 .035em 0 #dededa,
+  0 .04em  0 #dededa,
+  0 .045em 0 #dbdbd6,
+  0 .055em 0 #dbdbd6,
+  0 .06em  0 #dbdbd6,
+  0 .065em 0 #d9d9d4,
+  0 .07em  0 #d9d9d4,
+  0 .08em  0 #d8d8d3,
+  0 .085em 0 #d8d8d3,
+  0 .09em  0 #d8d8d3,
+  0 .095em 0 #d6d6d1,
+  0 .105em 0 #d6d6d1,
+  0 .06em .06rem rgba(104, 104, 92, 0.15),
+  .07em .105em .04em rgba(0, 0, 0, .015),
+  -.02em .09em .05em rgba(104, 104, 92, 0.25),
+  -.03em .07em .065em rgba(104, 104, 92, 0.1),
+  -.075em .08em .09em rgba(104, 104, 92, 0.06),
+  -.09em .06em .195em rgba(104, 104, 92, 0.095) !important;
+}
+
+.www {
+  text-shadow:
+  1px 1px 0 black,
+  -1px 0px 0 black,
+  5px 5px 0 rgb(206,231,206),
+  6px 6px 0 black,
+  10px 10px 0 rgb(0,132,74),
+  11px 11px 0 black
+  !important;
+}

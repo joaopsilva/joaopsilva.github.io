@@ -1,0 +1,7 @@
+alias e.="explorer ."
+alias cedh="cd /c/Projects/edh"
+alias cdg="cd /g/Users/j/jsilva/Desktop" 
+
+alias setenv='cmd "/C sysdm.cpl"'
+
+alias ll="ls -larth"
