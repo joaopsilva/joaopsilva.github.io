@@ -1,0 +1,19 @@
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="1.1" width="194.42189025878906" height="84.421875">
+          <defs>
+            <style type="text/css">svg{background-color:#fff}text,tspan{font:12px Arial}path{fill-opacity:0;stroke-width:2px;stroke:#000}circle{fill:#6b6659;stroke-width:2px;stroke:#000}.anchor text,.any-character text{fill:#fff}.anchor rect,.any-character rect{fill:#6b6659}.escape text,.charset-escape text,.literal text{fill:#000}.escape rect,.charset-escape rect{fill:#bada55}.literal rect{fill:#dae9e5}.charset .charset-box{fill:#cbcbba}.subexp .subexp-label tspan,.charset .charset-label tspan,.match-fragment .repeat-label tspan{font-size:10px}.subexp .subexp-label tspan,.charset .charset-label tspan{dominant-baseline:text-after-edge}.subexp .subexp-box{stroke:#908c83;stroke-dasharray:6,2;stroke-width:2px;fill-opacity:0}.quote{fill:#908c83}
+      </style>
+          </defs>
+          <metadata>
+            <rdf:rdf>
+              <cc:license rdf:about="http://creativecommons.org/licenses/by/3.0/">
+                <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"></cc:permits>
+                <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"></cc:permits>
+                <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"></cc:requires>
+                <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"></cc:requires>
+                <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"></cc:permits>
+              </cc:license>
+            </rdf:rdf>
+          </metadata>
+        <desc>Created with Snap</desc><g transform="matrix(1,0,0,1,15,9.9843)" class="root"><g transform="matrix(1,0,0,1,10,0)" class="regexp match"><path d="M63.875,42.7734625H98.875"></path><g class="match-fragment" transform="matrix(1,0,0,1,0,0)"><path d="M0,42.7734625q10,0 10,-10v-22.757812704467774q0,-10 10,-10h48.875q10,0 10,10v22.757812704467774q0,10 10,10"></path><g transform="matrix(1,0,0,1,15,10)" class="subexp"><rect rx="3" ry="3" class="subexp-box" transform="matrix(1,0,0,1,0,11.1094)" width="58.875" height="43.328125"></rect><text x="0" y="0" transform="matrix(1,0,0,1,0,11.1094)" class="subexp-label"><tspan>group #1</tspan></text><g transform="matrix(1,0,0,1,10,21.1094)" class="regexp match match-fragment literal"><g class="label"><rect width="38.875" height="23.328125" rx="3" ry="3"></rect><text x="0" y="0" transform="matrix(1,0,0,1,5,16.6641)"><tspan class="quote">“</tspan><tspan>not </tspan><tspan class="quote">”</tspan></text></g></g></g></g><g class="match-fragment literal" transform="matrix(1,0,0,1,98.875,31.1094)"><g class="label"><rect width="45.546875" height="23.328125" rx="3" ry="3"></rect><text x="0" y="0" transform="matrix(1,0,0,1,5,16.6641)"><tspan class="quote">“</tspan><tspan>to be</tspan><tspan class="quote">”</tspan></text></g></g></g><path d="M35,42.7734625H0M154.421875,42.7734625H164.421875"></path><circle cx="0" cy="42.7734625" r="5"></circle><circle cx="164.421875" cy="42.7734625" r="5"></circle></g></svg>
+      
