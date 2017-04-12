@@ -52,12 +52,12 @@
 					<p>And it can be used by both programmers and non-programmers, though I'll focus more on techniques for programmers.
 					</aside>
 				</section>
-
+				
 				<section data-background-color="black">
 					<h1 style="color:#f9c300">What is Web Scraping?</h1>
 					<aside class="notes">
 					<p>To define this, I'm copying here the definition of Web Scraping from Wikipedia.
-					</aside>					
+					</aside>
 				</section>
 
 				<section data-background-color="black">
@@ -78,75 +78,75 @@
 				</section>
 				-->
 				<section data-background="img/if-you-say-so.gif">
-				<aside class="notes">				
+				<aside class="notes">
 				Which is a bit a vague, as usual with Wikipedia. What do you mean by extracting information from websites? So let's try to clarify with an example.
 				</aside>
 				</section>
-				
+
 				<!--
 				<section data-background="img/okay.gif">
 					<h2 style="margin-bottom:-300px">Okay.</h2>
-				</section>				
+				</section>
 				-->
 
 				<section>
 					<section data-transition="none">
 						<h2>Web Scraper Input</h2>
 						<!-- https://www.avito.ru/moskva/komnaty/sdam?pmax=20000&pmin=10000 -->
-						<img src="img/cvbankas.png" width="65%" />
+						<img src="img/reed.png" width="70%" />
 						<aside class="notes">
-						<p>Let's say you have just graduated from college here in VGTU, and you are looking for a job.
+						<p>Let's say you have just graduated from college here in Glasgow, and you are looking for a job.
 						<p>For this, I was told that you'd probably go to a website such as cvbankas.lt, and then search for some criteria, about the jobs that might be interesting to you.
 						<p>But you want a bit more than what the website gives to you. You want for example, to be alerted, anytime a new job posting appears that needs Java or Python, and you want to know the average salary. But cvbankas does not give you that. You have to click and go inside each job post. And you do this everyday, you go to the web site, search around, and see if something matches your skills.
 						<p>Which is perfectly fine, but if you are an IT guy, you could automatize this process!
-						<p>So what can you do? You can use a web scraper to download every job post on cvbankas, you create an Excel file, and you mail it to yourself, for example.
+						<p>So what can you do? You can use a web scraper to download every job post on reed, you create an Excel file, and you mail it to yourself, for example.
 						<p>So, the input of a web scraper is always a Web page, such as this one. <strong>DOWN</strong>
 						</aside>
 					</section>
 					<section data-transition="none">
 						<h2>Extract Relevant Parts (List)</h2>
-						<img src="img/cvbankas-highlight.png" width="65%" />
+						<img src="img/reed-highlight.png" width="70%" />
 						<aside class="notes">
 						<p>Then, after you have downloaded the web page, you extract or scrape the relevant parts.
 						<p>In this case, we want to get the job title, the salary and the name of the company.
 						</aside>
-					</section>					
+					</section>
 
 					<section data-transition="none">
 						<h2>Extract Relevant Parts (DETAIL)</h2>
-						<img src="img/cvbankas-job-highlight.png" width="60%" />
+						<img src="img/reed-job-highlight.png" width="75%" />
 						<aside class="notes">
 						<p>Then, since we are also interested in the skills, we have to go inside a job post to extract if from the body. And you might also want to extract the number of persons who have applied.
 						</aside>
-					</section>										
+					</section>
 					<section data-transition="none">
 						<h2>Web Scraper Output</h2>
 						<table style="background: rgba(255, 255, 255, 0.05);box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2)">
-							<tr style="color:#f9c300;"> 
+							<tr style="color:#f9c300;">
 						   		<th>Description</th>
 						   		<th>Company</th>
-						   		<th>Salary (€)</th>
+						   		<th>Salary (£)</th>
 						   		<th style="text-align:center">Skills</th>
 						 	</tr>
 						 	<tr>
-						   		<td style="text-align:right">Swift/Objective C Programuotojas</td>
-						   		<td style="text-align:right">Pixelmator</td>
-						   		<td>from 900</td>
-								<td style="text-align:center">Swift, Objective-C</td>
-						 	</tr>	 	
+						   		<td style="text-align:right">Senior Developer</td>
+						   		<td style="text-align:right">Hays</td>
+						   		<td>35k-45k</td>
+								<td style="text-align:center">Java, JavaScript</td>
+						 	</tr>
 						 	<tr>
-						   		<td style="text-align:right">Full Stack Programuotojas</td>
-						   		<td style="text-align:right">Dycode</td>
-						   		<td>800-1800</td>
+						   		<td style="text-align:right">Application Support</td>
+						   		<td style="text-align:right">Cathcart</td>
+						   		<td>22k-24k</td>
 								<td style="text-align:center">PHP</td>
 						 	</tr>
 						 	<tr>
-						   		<td style="text-align:right">Automatino Testavimo Inzinerius</td>
-						   		<td style="text-align:right">Norcurrent</td>
-						   		<td>Unavailable</td>
-								<td style="text-align:center">Java, C++, Python</td>
-						 	</tr>			 						 	
-						</table>	
+						   		<td style="text-align:right">Drupal Developer</td>
+						   		<td style="text-align:right">Search</td>
+						   		<td>Negotiable</td>
+								<td style="text-align:center">PHP, JavaScript</td>
+						 	</tr>
+						</table>
 						<aside class="notes">
 						<p>And after extracting this information, we can do whatever we want with it. We can for example create a nice Excel table like this.
 						<p>And we can for example, send an immediate alert to our e-mail, once a job which needs Java appears.
@@ -199,42 +199,42 @@
 						<p>So if you want to modify that data, if you want to produce statistics, if you want to mix it with information from others sites, you have to automatically extract it somehow</p>
 						<p>You can do this using copy-paste, or if you're lucky APIs.</p>
 						<p>And if all else fails, you can do web scraping! There are endless use cases for this</p>
-					</aside>					
+					</aside>
 				</section>
 
 				<section data-background-color="black">
 					<h1 style="color:#f9c300">Use Cases</h1>
 				</section>
 
-				<section>				
+				<section>
 					<section>
 						<h2>News aggregator</h2>
 						<h4>Google News</h4>
-						<img src="img/GoogleNewsLT.png" width="1522"/>
+						<img src="img/GoogleNewsUK.png" width="100%"/>
 						<aside class="notes">
 						<p>Google News scrapes the content from many websites.</p>
-						</aside>
-					</section>					
-					<section>
-						<h2>Aggregated Site</h2>
-						<h4>tv3.lt</h4>
-						<img src="img/tv3.png" width="60%"/>
-						<aside class="notes">
-						They go to news sites such as tv3.lt
 						</aside>
 					</section>
 					<section>
 						<h2>Aggregated Site</h2>
-						<h4>15.lt</h4>
-						<img src="img/15.png" width="65%"/>
+						<h4>The Guardian</h4>
+						<img src="img/GoogleNews_TheGuardian.png" width="70%"/>
 						<aside class="notes">
-						Or 15.lt.
-						</aside>						
-					</section>	
+						They go to news sites such as TheGuardian.
+						</aside>
+					</section>
+					<section>
+						<h2>Aggregated Site</h2>
+						<h4>Metro</h4>
+						<img src="img/GoogleNews_Metro.png" width="65%"/>
+						<aside class="notes">
+						Or Metro.
+						</aside>
+					</section>
 					<section>
 						<h2>News aggregator</h2>
 						<h4>Google News</h4>
-						<img src="img/GoogleNewsLT-Highlight.png" width="1522"/>
+						<img src="img/GoogleNewsUK_Highlight.png" width="100%"/>
 						<aside class="notes">
 						<p>And then they aggregate them together, they apply some smartness, they categorize websites into sections, such as Business, Sports, Culture, etc.</p>
 						</aside>
@@ -246,35 +246,36 @@
 						<aside class="notes">
 						<p>And there are many more like Google News, a very famous one being Instapaper, which scrapes data from websites for you to read later.</p>
 						</aside>
-					</section>						
-				</section>				
+					</section>
+				</section>
 
 				<section>
 					<h2>Real estate</h2>
-					<h4>Aroudas.lt</h4>
-					<img src="img/Aroudas.png" width="55%" />
+					<h4>Nestoria.co.uk</h4>
+					<img src="img/Nestoria_Highlight.png" width="75%" />
 					<aside class="notes">
-					Collect properties from real estate listings scrape retailer sites on a daily basis, and do someting like Aroudas.
+					Collect properties from real estate listings scrape retailer sites on a daily basis, and do someting like Nestoria.
+					Basically what they do is, they scrap rental listings from sites such as Zoopla or Gumtree, and put them all together in a single page.
+					And then they expose this information to developers, through REST APIs.
 					</aside>
 				</section>
 
 				<section>
 					<section>
 						<h2>Price Comparison</h2>
-						<h4>Kaina24.lt</h4>
-						<img src="img/Kaina24.png" width="65%"/>
+						<h4>Idealo.co.uk</h4>
+						<img src="img/Idealo.png" width="65%"/>
 						<aside class="notes">
-						Price comparison, like this website, Kaina24, does.
+						Price comparison, like this website, Idealo, does.
 						<p>So what they do is, they go multiple retailer or manufacterer websites, they scrape the price, and then they show it here, and you can choose the cheaper option.
-						<p>scrape products from retailer or manufacturer websites to show in their own website or provide specs/price comparison
 						</aside>
 					</section>
 					<section>
 						<h2>Aggregated Site</h2>
-						<h4>RDE.lt</h4>
-						<img src="img/RDE.png" width="80%"/>
+						<h4>BT Shop</h4>
+						<img src="img/BT.png" width="80%"/>
 						<aside class="notes">
-						This is one of the sites from which Kaina24 scrapes from. So, as you can see, there are tons of companies, whose business model, relies on web scraping!
+						This is one of the sites from which Idealo scrapes from, BT Shop. So, as you can see, there are tons of companies, whose business model, relies on web scraping!
 						</aside>
 					</section>
 				</section>
@@ -282,7 +283,7 @@
 				<section>
 					<section>
 						<h2>Weather Monitoring</h2>
-						<img src="img/WeatherGoogleVilnius.png" width="70%"/>
+						<img src="img/GlasgowWeather.png" width="70%"/>
 						<aside class="notes">
 						When you see the Weather on Google.com, the information they show you is actually scraped from weather.com, and transformed into a nicer and simpler to access view.
 						</aside>
@@ -296,29 +297,29 @@
 						<aside class="notes">
 						</aside>
 					</section>
-				</section>			
+				</section>
 
 				<!--Groupon-->
 
 				<section>
 					<section>
 						<h2>Job Boards</h2>
-						<h5>cvbankas.lt</h5>
-						<img src="img/cvbankas.png" width="55%"/>
+						<h5>Indeed.co.uk</h5>
+						<img src="img/Indeed.png" width="70%"/>
 						<aside class="notes">
-						cvbankas, from what I understood, actually allows employers to directly submit jobs in the site.
-						But in many other similar websites, what they do is, they go to the Careers page of companies.
+						Job boards, for example, what Indeed.co.uk does is they go to the Careers page of several companies, they scrape their
+						content, and then show them up nicely.
 						</aside>
 					</section>
 					<section>
 						<h2>Aggregated Site</h2>
-						<h4>Microsoft Careers</h4>
-						<img src="img/MicrosoftCareers.png" width="55%"/>
+						<h4>JPMorgan Careers</h4>
+						<img src="img/JPMorgan.png" width="60%"/>
 						<aside class="notes">
 						For example, Microsoft, they
 						</aside>
 					</section>
-				</section>	
+				</section>
 
 				<section>
 					<section>
@@ -343,7 +344,7 @@
 						<aside class="notes">
 						It's not all about business, it's also about doing something more personal, and fun.
 						For example, one thing that always annoyed me, was the CERN Restaurant Menu.
-						So, at CERN, we have a cafeteria, like the one you have here in Dubna.
+						So, at CERN, we have a cafeteria, like the one you have here in the University of Glasgow.
 						And this cafeteria has a website, where you can see the menu for the week.
 						But it's very cumbersome, it's very slow, very hard to find the information.
 						</aside>
@@ -353,22 +354,23 @@
 						<img src="img/lunchtime.png" />
 						<aside class="notes">
 						So what I did was develop a small web scraper, which downloads the entire menu from the week, caches it, and then I can see the menu from the command line!
-						I find it quite useful.							
+						I find it quite useful.
 						</aside>
 					</section>
 				</section>
 
-				<section data-background="img/imagination.gif">
+				<!--<section data-background="img/imagination.gif">-->
+				<section data-state="imagination">
 					<h1 class="fragment" style="color:#f9c300">The only limit is your imagination</h1>
 					<aside class="notes">
 					There are many more use cases. The only limit is your imagination.
-					</aside>				
+					</aside>
 				</section>
 
 				<section data-state="steps">
 					<h1 style="color:#f9c300">How to get started?</h1>
 					<aside class="notes">
-					How to get started? What are steps?	
+					How to get started? What are steps?
 					</aside>
 				</section>
 
@@ -409,24 +411,24 @@
 					<aside class="notes">
 					Okay, so we need to make HTTP requests, and for that we need an HTTP client.
 					</aside>
-				</section>				
+				</section>
 
 				<section>
 					<h2>Command-line tools</h2>
-					<pre class="xml" style="width:60%;font-size:30px;text-align:center"><code>curl http://en.cvbankas.lt</code></pre>
-					<img class="fragment" src="img/curl-cvbankas.png" width="70%"/>
+					<pre class="xml" style="width:60%;font-size:30px;text-align:center"><code>curl https://www.reed.co.uk/</code></pre>
+					<img class="fragment" src="img/curl-reed.png" width="100%"/>
 					<aside class="notes">
-					The most basic http client youc an use, is a command-line one, such as cURL or wget.
-					What they do is essentially download the content of your HTML page.
+					The most basic http client you can use, is a command-line one, such as cURL or wget.
+					What they do is essentially download the content of an HTML page your command line.
 					</aside>
-				</section>	
+				</section>
 
 				<section>
 				<h2>HTTP Requests with node.js</h2>
-				<pre style="width:40%;font-size:34px;text-align:center"><code>npm install request</code></pre>						
+				<pre style="width:40%;font-size:34px;text-align:center"><code>npm install request</code></pre>
           		<pre class="highlight fragment javascript" style="font-size:34px;line-height:52px;padding:5px 10px;max-height:400px">
 <span>var request = require("request");</span>
-<span class="fragment">var url = "http://en.cvbankas.lt";</span>
+<span class="fragment">var url = "https://www.reed.co.uk";</span>
 <span class="fragment">request(url, function(<span class="fragment highlight-current-green">error</span>, <span class="fragment highlight-current-green">response</span>, <span class="fragment highlight-current-green">body</span>) {
   console.log(body);
 });</span></pre>
@@ -442,7 +444,7 @@
 
 				Then, you have a callback function, which will be called whenever the request is finished, and you'll get the error object, the HTTP response, and the HTML body.
 				</aside>
-          		</section>		
+          		</section>
 
 				<section data-state="toolbox">
 					<h1 style="color:#f9c300">Web Scraping Toolbox</h1>
@@ -468,7 +470,7 @@
 					So the most basic is copy-and-paste.
 					Portia lets you scrape web sites without any programming knowledge required, by providing a visual tool to select elements on the page you would like to scrape.
 					</aside>
-				</section>     							
+				</section>
 
 				<section>
 					<section>
@@ -501,7 +503,7 @@
 						<p>A wildcard is a character that can be used as a substitute for any of a class of characters in a search</p>
 						<p>For example, most of you have probably already used Unix distributions, and are familiar with ls, for listing files in a directory. This tool supports wildcards. For example, if you want to list all files that have a txt extension, what you do is use *.txt, where * is a wildcard which means any filename.</p>
 						<p>Another use case is Grep, which actually stands for Global Regular Expression Print, and it's extremely useful to search for strings and patterns in a group of files, or even sub-folders.</p>
-						<p>It's ubiquitous, text editor, Microsoft Word, Find every instance of a string in a file.How many times does sing appear in a text. 
+						<p>It's ubiquitous, text editor, Microsoft Word, Find every instance of a string in a file.How many times does sing appear in a text.
 						Validating input. For example, checking if an e-mail has the correct format, et cetera</p>
 						<p>How many of you know regular expressions?</p>
 						</aside>
@@ -518,7 +520,7 @@
 								<code style="font-size:40px;color:#f9c300">/or/</code> - character sequence: <code style="font-size:40px;">Hello W<span class="fragment highlight-green">or</span>ld</code>
 								<center class="fragment current-hidden"><img src="img/character-sequence.svg" width="30%"/></center>
 							</li>
-							<li class="fragment">							
+							<li class="fragment">
 								Metacharacters with special meaning:<br/>
 								 <code style="font-size:40px;color:#f9c300">.</code> <code style="font-size:40px;color:#f9c300">\</code> <code style="font-size:40px;color:#f9c300">( )</code> <code style="font-size:40px;color:#f9c300">[ ]</code> <code style="font-size:40px;color:#f9c300">{ }</code> <code style="font-size:40px;color:#f9c300">^</code> <code style="font-size:40px;color:#f9c300">$</code> <code style="font-size:40px;color:#f9c300">|</code> <code style="font-size:40px;color:#f9c300">*</code> <code style="font-size:40px;color:#f9c300">+</code>
 							</li>
@@ -528,7 +530,7 @@
 							<li class="fragment"><code style="font-size:40px;color:#f9c300">/\./</code> - literal dot: <code style="font-size:40px;">Hello World<span class="fragment highlight-green">.</span></code>
 							<center class="fragment current-hidden"><img src="img/dot.svg" width="30%"/></center>
 							</li>
-						</ul>	
+						</ul>
 						<aside class="notes">
 						Regular expressions, at its essence, are simply composed by characters and metacharacters.
 						So let's write our very first basic regex.
@@ -556,14 +558,14 @@
 							<li class="fragment">
 								<code style="font-size:40px;color:#f9c300">/colou?r/</code> - zero or one time: <code class="fragment highlight-green">color</code> and <code class="fragment highlight-green">colour</code>
 								<center class="fragment current-hidden"><img src="img/optional.svg" width="70%"/></center>
-							</li>							
+							</li>
 							<li class="fragment">
 								<code style="font-size:40px;color:#f9c300">/#[0-9a-f]{6}/</code> - matches <code style="font-size:40px;color:#f9c300">{n}</code> times: <code class="fragment highlight-green">#ff0099</code>
 								<center class="fragment current-hidden"><img src="img/repeat.svg" width="35%"/></center>
-							</li>		
+							</li>
 						</ul>
-						<aside class="notes">	
-						http://regexper.com/#l.*x						
+						<aside class="notes">
+						http://regexper.com/#l.*x
 						</aside>
 					</section>
 					<section>
@@ -586,9 +588,9 @@
 							<li class="fragment"><code style="font-size:40px;color:#f9c300">/[a-z]/</code> - any lowercase letter: <code class="fragment highlight-current-green">I</code><span class="fragment highlight-green">D</span>#12345</li>
 						</ul>
 						<aside class="notes">
-							You can also get into more complicated characters. Anything you put in square brackets will be matched as a range. 
+							You can also get into more complicated characters. Anything you put in square brackets will be matched as a range.
 						</aside>
-					</section>	
+					</section>
 					<section>
 						<h2>Regular Expressions 101</h2>
 						<h4>Shorthand Character Sets <code style="font-size:40px;color:#f9c300">[ ]</code></h4>
@@ -598,7 +600,7 @@
 							<li class="fragment"><code style="font-size:40px;color:#f9c300">/\s/</code> - whitespace (space, tabs, line breaks)</li>
 						</ul>
 						<aside class="notes">
-							You can also get into more complicated characters. Anything you put in square brackets will be matched as a range. 
+							You can also get into more complicated characters. Anything you put in square brackets will be matched as a range.
 						</aside>
 					</section>
 					<section>
@@ -619,9 +621,9 @@
 						</ul>
 						<aside class="notes">
 							Anchors don't match any character, they match a position in the string.
-							You can also get into more complicated characters. Anything you put in square brackets will be matched as a range. 
+							You can also get into more complicated characters. Anything you put in square brackets will be matched as a range.
 						</aside>
-					</section>	
+					</section>
 					<section>
 						<h2>Regular Expressions 101</h2>
 						<h4>Grouping and Capturing <code style="font-size:40px;color:#f9c300">( )</code></h4>
@@ -636,7 +638,7 @@
 							</li>
 							<li class="fragment"><code style="font-size:40px;color:#f9c300">
 							/&lt;div&gt;(.*)&lt;/div&gt;/</code> - capture text inside <code>div</code> tag
-							<center class="fragment current-hidden"><img src="img/regex-div-tag.svg" width="50%"/></center>	
+							<center class="fragment current-hidden"><img src="img/regex-div-tag.svg" width="50%"/></center>
           					<pre class="fragment current-hidden"><code class="javascript" style="font-size:1.4em;line-height:34px">s = "<div>some text</div>"
 s.match(/<div>(.*)</div>/)
 ["some text"]</code></pre>
@@ -648,30 +650,30 @@ s.match(/<div>(.*)</div>/)
 						s.replace(/(\w+)([^\w]+)(\w+)/, '$3$2$1')
 						"is that the question"
 						</aside>
-					</section>																			
+					</section>
 					<section data-transition="none">
 						<h2>Our first Web Scraper</h2>
 						<h4>Extract Current Temperature in Vilnius</h4>
 						<img class="fragment" src="img/WeatherNetworkVilnius.png" width="34%"/>
-						<aside class="notes">							
+						<aside class="notes">
 						<p>Okay, so now we know how to download HTML from a web page, and now we know a technique to extract information from text.
 						<p>We have everything we need to build our first web scraper!
 						<p>For this, we are going to develop a small web scraper that goes to the weather network website, and downloads the current temperature in Moscow.
 						<p>So the first thing we do is, we look at the page, and we have to find the information we want to extract.
 							http://mobile.theweathernetwork.com/weather/lhxx0005
 							http://opensourceforu.efytimes.com/2012/06/beginners-guide-gnu-grep-basics-regular-expressions/
-							view-source:http://ais-grid-2015.jinr.ru/						
+							view-source:http://ais-grid-2015.jinr.ru/
 						</aside>
 					</section>
 					<section data-transition="none">
 						<h2>Our first Web Scraper</h2>
 						<h4>Extract Current Temperature in Vilnius</h4>
 						<img src="img/WeatherNetworkVilnius-Highlight.png" width="34%"/>
-						<aside class="notes">							
+						<aside class="notes">
 						<p>And in this case, it's fairly easy, it's here.
 						<p>So what we are looking for are numbers followed by the temperature symbol and then followed by the C character for Celsius.
 						</aside>
-					</section>					
+					</section>
 					<section>
 						<h2>Our first Web Scraper</h2>
 						<h4>Extract Current Temperature in Vilnius</h4>
@@ -682,14 +684,14 @@ s.match(/<div>(.*)</div>/)
 						So to be sure, it's always good to check the source.
 						This can be easily done in most browsers, if you right click the page, and then click view source.
 						</aside>
-					</section>	
+					</section>
 					<section>
 						<h2>Our first Web Scraper</h2>
 						<h4>Extract Current Temperature in Vilnius</h4>
 						<ol>
 							<li>Download HTML from The Weather Network for Vilnius
 								<pre class="fragment xml" style="width:100%;font-size:30px;text-align:center"><code>curl http://mobile.theweathernetwork.com/weather/lhxx0005</code></pre>
-							</li>							
+							</li>
 							<li>Use regular expressions to extract the current temperature
 								<pre class="fragment xml" style="width:50%;font-size:30px;text-align:center"><code>egrep -o "[0-9]+&amp;deg;"</code></pre>
 							</li>
@@ -697,14 +699,14 @@ s.match(/<div>(.*)</div>/)
 						<aside class="notes">
 							Switch to console. Show how to sed.
 						</aside>
-					</section>					
+					</section>
 					<section data-background="img/cheering-minions.gif">
 					<aside class="notes">
 						Alright, so we developed our first web scraper! Cool!
 						Let's do one more!
 					</aside>
 					</section>
-					<section data-transition="none">  
+					<section data-transition="none">
 						<h3>A more complex scraper</h3>
 						<img src="img/ais-grid-2015.png" width="70%"/>
 						<aside class="notes">
@@ -712,7 +714,7 @@ s.match(/<div>(.*)</div>/)
 						There can't be anything else on the page which resembles a temperature, so a simple regex works.
 						But that's usually not the real world.
 						In this website, for example, which is from another school which took place just a couple of months ago.
-						And in here, let's say we want to extract people of CERN who organized the school.		
+						And in here, let's say we want to extract people of CERN who organized the school.
 						</aside>
 					</section>
 					<section data-transition="none">
@@ -723,15 +725,15 @@ s.match(/<div>(.*)</div>/)
 						But this time, there's not a very clear pattern here.
 						The names are in bold, are comma-separated, but so are the names of the JINR and MEPHI committee.
 						So what can we do? Well, let's try to explore the source code of the page, and see if we can identify a pattern here.
-						view-source:http://grid-2015.jinr.ru/						
+						view-source:http://grid-2015.jinr.ru/
 						</aside>
-					</section>	
+					</section>
 					<section data-transition="none">
 						<h3>A more complex scraper</h3>
 						<img src="img/grid-source.png" width="65%"/>
 						<aside class="notes">
 						</aside>
-					</section>						
+					</section>
 					<section>
 						<h3>A more complex scraper</h3>
 						<ul>
@@ -742,17 +744,21 @@ s.match(/<div>(.*)</div>/)
 						</ul>
 						<pre class="fragment xml" style="font-size:26px;line-height:38px"><code data-trim>
 curl -s http://grid.jinr.ru |
-grep -Pzo "(?s)<strong style=[^>]+>CERN:</strong>.*</strong>" | 
-grep -Eo "<strong>[^&lt;]+</strong>" | 
-sed 's/&lt;\/\?strong>//g'</code></pre>						
+grep -Pzo "(?s)<strong style=[^>]+>CERN:</strong>.*</strong>" |
+grep -Eo "<strong>[^&lt;]+</strong>" |
+sed 's/&lt;\/\?strong>//g'</code></pre>
 						<aside class="notes">
 						</aside>
-					</section>														
+					</section>
 					<section>
 						<h2>Do not parse HTML with RegEx</h2>
 						<img src="img/you-cant-parse-HTML-with-regex.png" width="65%"/>
 						<h4 class="fragment"><i>Have you tried using an HTML parser instead?</i></h4>
-					</section>					
+						<aside class="notes">
+							You shouldn't use Regex to parse HTML. Everytime you do so, you summon tainted souls into the realm of the living,
+							and you bring havoc to this world.
+						</aside>
+					</section>
 				</section>
 
 				<section>
@@ -761,7 +767,7 @@ sed 's/&lt;\/\?strong>//g'</code></pre>
           			<img src="img/DOM-model.png" style="width:50%; height:auto; background:white" />
 					<aside class="notes">
 					Alright, so Regular Expressions are useful for extracting patterns in text, but not so much for parsing HTML.
-					What can we use instead? We need an HTML parser. 
+					What can we use instead? We need an HTML parser.
 					</aside>
 				</section>
 
@@ -771,7 +777,7 @@ sed 's/&lt;\/\?strong>//g'</code></pre>
 						<li class=""><strong style="color:red">XPath</strong></li>
 						<li class="">CSS Selectors / jQuery</li>
 					</ul>
-					<aside class="notes">					
+					<aside class="notes">
 					Let's move on to XPath and CSS Selectors.
 					</aside>
 				</section>
@@ -803,7 +809,7 @@ sed 's/&lt;\/\?strong>//g'</code></pre>
 │   └───admin
 ├───Scripts
 └───wwwroot
-</pre>	
+</pre>
 <div class="fragment">Change to the Desktop directory<pre><code style="font-size:1.1em;line-height:24px">cd C:/Users/jsilva/Desktop</code></pre></div>
 					<aside class="notes">
 						What's a path expression? It's an expression used to navigate over a tree-like structure.
@@ -817,16 +823,16 @@ sed 's/&lt;\/\?strong>//g'</code></pre>
 						<h2>XPath Expressions</h2>
 						<pre><code style="font-size:1em;line-height:28px">&lt;html&gt;
   &lt;head&gt;
-    &lt;title&gt;CERN Spring Campus 2016&lt;/title&gt;
-  &lt;/head&gt; 
+    &lt;title&gt;CERN Spring Campus 2017&lt;/title&gt;
+  &lt;/head&gt;
   &lt;body&gt;
     &lt;div&gt;
-      &lt;p&gt;The school will be held at VGTU (Vilnius, Lithuania)&lt;/p&gt;
+      &lt;p&gt;The school will be held at the University of Glasgow&lt;/p&gt;
       &lt;p&gt;Working language: English&lt;/p&gt;
     &lt;/div&gt;
-  &lt;/body&gt; 
-&lt;/html&gt;			
-</pre></code> 
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></code>
 					<div class="fragment">Select the title of the page <pre><code style="font-size:1.1em;line-height:26px">/html/head/title</code></pre></div>
 					<div class="fragment">Select the first paragraph <pre><code style="font-size:1.1em;line-height:26px">/html/body/div/p[1]</code></pre></div>
 					<aside class="notes">
@@ -838,34 +844,35 @@ sed 's/&lt;\/\?strong>//g'</code></pre>
 						<img src="img/grid-source.png" width="65%"/>
 						<aside class="notes">
 						</aside>
-					</section>						
+					</section>
 					<section>
 						<h3>Our complex web scraper (revisited)</h3>
 						<ul>
 							<li class="fragment">Find the <code>&lt;strong&gt;</code> tag which contains "<code>CERN:</code>"
 							<pre class="fragment xml" style="margin:0;font-size:24px;line-height:38px"><code>//strong[contains(text(),'CERN')]</code></pre>
-							</li>							
+							</li>
 							<li class="fragment">Find all sibling <code>&lt;strong&gt;</code> tags
 							<pre class="fragment xml" style="margin:0;font-size:24px;line-height:38px"><code>//strong[contains(text(),'CERN')]/following-sibling::strong</code></pre>
 							</li>
 							<li class="fragment">Extract text from the inside of the HTML tag</code>"
 							<pre class="fragment xml" style="width:101%;margin:0;font-size:24px;line-height:38px"><code>//strong[contains(text(),'CERN')]/following-sibling::strong/text()</code></pre>
-							</li>							
+							</li>
 						</ul>
 						<aside class="notes">
 						</aside>
 					</section>
 					<section>
 					<h2>XPath with node.js</h2>
-					<pre style="width:40%;font-size:30px;text-align:center"><code>npm install xmldom</code></pre>						
-	          		<pre class="highlight fragment javascript" style="font-size:24px;line-height:32px;padding:5px;max-height:800px">
+					<pre style="width:40%;font-size:30px;text-align:center"><code>npm install xmldom</code></pre>
+	          		<pre class="highlight fragment javascript" style="font-size:22px;line-height:32px;padding:5px;max-height:800px;width:960px">
 <span>var request = require("request");</span>
 var xpath = require('xpath');
 var dom = require('xmldom').DOMParser;
 
 <span class="fragment">request("http://grid.jinr.ru", function (e, r, body) {
   var doc = new dom().parseFromString(body);
-  var nodes = xpath("//strong[contains(text(),'CERN')]/following-sibling::strong/text()", doc);  
+  var nodes = xpath(
+    "//strong[contains(text(),'CERN')]/following-sibling::strong/text()", doc);
   console.log(nodes);
 });</span></pre>
 <div class="fragment" style="text-align:center">Output
@@ -873,7 +880,7 @@ var dom = require('xmldom').DOMParser;
 T. Kurtyka
 D. Mathieson
 R. Titov</code></pre></div>
-	          		</section>										
+	          		</section>
 				</section>
 
 				<section>
@@ -886,7 +893,7 @@ R. Titov</code></pre></div>
 					Okay, XPath is a nice way to process HTML, but XPath expressions can get very long and verbose.
 					That's why I personally prefer CSS Selectors, which I'll show you now.
 					</aside>
-				</section>     															  
+				</section>
 
 				<section>
 					<section>
@@ -904,8 +911,8 @@ R. Titov</code></pre></div>
 					<section>
 						<h2>CSS Selectors 101</h2>
 						<h4>Element Selector</h4>
-						<pre style="width:40%;font-size:30px;text-align:center"><code>li { color: red; }</code></pre>						
-	<div style="width:49%;float:left">					
+						<pre style="width:40%;font-size:30px;text-align:center"><code>li { color: red; }</code></pre>
+	<div style="width:49%;float:left">
 <pre><code data-trim style="font-size:30px;line-height:36px">
 <p>Some paragraph</p>
 <ul>
@@ -913,7 +920,7 @@ R. Titov</code></pre></div>
   <li>Item 2</li>
   <li>Item 3</li>
 </ul>
-</pre></code>		
+</pre></code>
 </div>
 <div style="width:49%;float:right">
 <p>Some paragraph</p>
@@ -922,13 +929,13 @@ R. Titov</code></pre></div>
 	<li style="color:red">Item 2</li>
 	<li style="color:red">Item 3</li>
 </ul>
-</div>								
-					</section>			
+</div>
+					</section>
 					<section>
 						<h2>CSS Selectors 101</h2>
 						<h4>#id Selector</h4>
-						<pre style="width:50%;font-size:30px;text-align:center"><code>#second { color: red; }</code></pre>						
-	<div style="width:49%;float:left">					
+						<pre style="width:50%;font-size:30px;text-align:center"><code>#second { color: red; }</code></pre>
+	<div style="width:49%;float:left">
 <pre><code data-trim style="font-size:24px;line-height:36px">
 <p>Some paragraph</p>
 <ul>
@@ -936,7 +943,7 @@ R. Titov</code></pre></div>
   <li id="second">Item 2</li>
   <li>Item 3</li>
 </ul>
-</pre></code>		
+</pre></code>
 </div>
 <div style="width:49%;float:right">
 <p>Some paragraph</p>
@@ -945,13 +952,13 @@ R. Titov</code></pre></div>
 	<li style="color:red">Item 2</li>
 	<li style="">Item 3</li>
 </ul>
-</div>								
-					</section>			
+</div>
+					</section>
 					<section>
 						<h2>CSS Selectors 101</h2>
 						<h4>.class Selector</h4>
-						<pre style="width:50%;font-size:30px;text-align:center"><code>.yellow { color: yellow; }</code></pre>						
-	<div style="width:49%;float:left">					
+						<pre style="width:50%;font-size:30px;text-align:center"><code>.yellow { color: yellow; }</code></pre>
+	<div style="width:49%;float:left">
 <pre><code data-trim style="font-size:24px;line-height:36px">
 <p>Some paragraph</p>
 <ul>
@@ -959,7 +966,7 @@ R. Titov</code></pre></div>
   <li>Item 2</li>
   <li class="green">Item 3</li>
 </ul>
-</pre></code>		
+</pre></code>
 </div>
 <div style="width:49%;float:right">
 <p>Some paragraph</p>
@@ -968,13 +975,13 @@ R. Titov</code></pre></div>
 	<li style="">Item 2</li>
 	<li style="color:yellow">Item 3</li>
 </ul>
-</div>								
+</div>
 					</section>
 					<section>
 						<h2>CSS Selectors 101</h2>
 						<h4>Element inside Element Selector</h4>
-						<pre style="width:65%;font-size:30px;text-align:center"><code>div p { background-color: red; }</code></pre>						
-	<div style="width:49%;float:left">					
+						<pre style="width:65%;font-size:30px;text-align:center"><code>div p { background-color: red; }</code></pre>
+	<div style="width:49%;float:left">
 <pre><code data-trim style="font-size:24px;line-height:36px">
 <div>
   <h4>My name is João</h4>
@@ -983,7 +990,7 @@ R. Titov</code></pre></div>
     <p>I work at CERN.</p>
   </div>
 </div>
-</pre></code>		
+</pre></code>
 </div>
 <div style="width:49%;float:right">
 <div>
@@ -993,13 +1000,13 @@ R. Titov</code></pre></div>
   	<p style="background-color:red">I work at CERN.</p>
   </div>
 </div>
-					</section>	
+					</section>
 
 					<section>
 						<h2>CSS Selectors 101</h2>
 						<h4>Element > Element Selector</h4>
-						<pre style="width:65%;font-size:30px;text-align:center"><code>div > p { background-color: red; }</code></pre>						
-	<div style="width:49%;float:left">					
+						<pre style="width:65%;font-size:30px;text-align:center"><code>div > p { background-color: red; }</code></pre>
+	<div style="width:49%;float:left">
 <pre><code data-trim style="font-size:24px;line-height:36px">
 <div>
   <h4>My name is João</h4>
@@ -1008,7 +1015,7 @@ R. Titov</code></pre></div>
     <p>I work at CERN.</p>
   </div>
 </div>
-</pre></code>		
+</pre></code>
 </div>
 <div style="width:49%;float:right">
 <div>
@@ -1018,49 +1025,49 @@ R. Titov</code></pre></div>
   	<p>I work at CERN.</p>
   </div>
 </div>
-					</section>						
+					</section>
 
 					<section>
 						<h2>CSS Selectors 101</h2>
 						<h4>[attribute]	Selector</h4>
-						<pre style="width:55%;font-size:30px;text-align:center"><code>a[href$=".pdf"] { color: red; }</code></pre>						
-	<div style="width:49%;float:left">					
+						<pre style="width:55%;font-size:30px;text-align:center"><code>a[href$=".pdf"] { color: red; }</code></pre>
+	<div style="width:49%;float:left">
 <pre><code data-trim style="font-size:24px;line-height:36px">
 <a href="cv.pdf">Some pdf</a>
 <br/>
 <a href="log.txt">Some txt</a>
-</pre></code>		
+</pre></code>
 </div>
 <div style="width:49%;float:right">
 <a href="cv.pdf" style="color: red">Some pdf</a><br/>
 <a href="log.txt">Some txt</a>
 					</section>
 
-					<section data-transition="none">  
+					<section data-transition="none">
 						<h3>Extract All PDFs from a Page</h3>
 						<pre><code style="font-size:1em;line-height:28px">&lt;html&gt;
   &lt;head&gt;
-    &lt;title&gt;CERN Spring Campus 2016&lt;/title&gt;
-  &lt;/head&gt; 
+    &lt;title&gt;CERN Spring Campus 2017&lt;/title&gt;
+  &lt;/head&gt;
   &lt;body&gt;
     &lt;div&gt;
       &lt;a href="http://someurl/Pres1.pdf"&gt;Getting data from the Web&lt;/a&gt;
-      &lt;a href="http://someurl/Other.pdf"&gt;Modern-day JavaScript&lt;/a&gt;
+      &lt;a href="http://someurl/Other.pdf"&gt;React Native&lt;/a&gt;
     &lt;/div&gt;
-  &lt;/body&gt; 
-&lt;/html&gt;			
-</pre></code> 
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></code>
 						<div class="fragment">
 						All presentation links are in the following format:
 						<pre><code>&lt;a href="http://someurl/Pres1.pdf"&gt;Getting data from the Web&lt;/a&gt;</code></pre>
-						</div>					
-						<aside class="notes">						
+						</div>
+						<aside class="notes">
 						</aside>
 					</section>
 					<section>
 					<h3>Extract All PDFs from a page</h3>
 					<h4>jQuery Selectors with node.js</h4>
-					<pre style="width:40%;font-size:30px;text-align:center"><code>npm install cheerio</code></pre>						
+					<pre style="width:40%;font-size:30px;text-align:center"><code>npm install cheerio</code></pre>
 	          		<pre class="highlight fragment javascript" style="font-size:26px;line-height:38px;padding:5px;max-height:800px">
 <span class="fragment">var request = require("request");</span>
 <span class="fragment">var cheerio = require("cheerio");</span>
@@ -1079,54 +1086,53 @@ R. Titov</code></pre></div>
 						Remember I told you before were actually half way.
 					</aside>
 	          		</section>
-				</section>	
+				</section>
 
-			
+
 				<section data-background="img/excited-party-time.gif">
 				</section>
 
 				<section>
 					<section data-transition="none">
-						<h2>Extract Java jobs in Vilnius</h2>
-						<small><a href="http://en.cvbankas.lt/?miestas=Vilnius&padalinys%5B0%5D=76&keyw=">http://en.cvbankas.lt/?miestas=Vilnius&amp;padalinys%5B0%5D=76</a></small>
-						<img src="img/cvbankas.png" width="60%" />
+						<h2>Extract Java jobs in Glasgow</h2>
+						<small><a href="https://www.reed.co.uk/jobs?location=Glasgow">https://www.reed.co.uk/jobs?location=Glasgow</a></small>
+						<img src="img/reed.png" width="70%" />
 						<aside class="notes">
-						Okay, let's develop a web scraper, which will basically extract all job posts related to Java from cvbankas and download them to disk.
+						Okay, let's develop a web scraper, which will basically extract all job posts related to Java from reed.co.uk, and download them to disk.
 						</aside>
 					</section>
 					<section data-transition="none">
 						<h2>Identify all relevant parts</h2>
-						<small><a href="http://en.cvbankas.lt/?miestas=Vilnius&padalinys%5B0%5D=76&keyw=">http://en.cvbankas.lt/?miestas=Vilnius&amp;padalinys%5B0%5D=76</a></small>
-						<img src="img/cvbankas-highlight.png" width="60%" />
+						<small><a href="https://www.reed.co.uk/jobs?location=Glasgow">https://www.reed.co.uk/jobs?location=Glasgow</a></small>
+						<img src="img/reed-highlight.png" width="70%" />
 						<aside class="notes">
 						First, you identify them visually, of course.
 						</aside>
 					</section>
 					<section data-transition="none">
 						<h2>Identify all relevant parts</h2>
-						<small><a href="http://en.cvbankas.lt/?miestas=Vilnius&padalinys%5B0%5D=76&keyw=">http://en.cvbankas.lt/?miestas=Vilnius&amp;padalinys%5B0%5D=76</a></small>
-						<img src="img/cvbankas-dom.png" width="60%" />
+						<small><a href="https://www.reed.co.uk/jobs?location=Glasgow">https://www.reed.co.uk/jobs?location=Glasgow</a></small>
+						<img src="img/reed-dom.png" width="70%" />
 						<aside class="notes">
 						Then, you identify them on the DOM.
 						</aside>
 					</section>
-
 					<section>
-					<h2>Extract Java jobs in Vilnius</h2>
+					<h2>Extract Java jobs in Glasgow</h2>
 	          		<pre class="highlight fragment javascript" style="font-size:24px;line-height:38px;padding:5px;max-height:800px;width:106%">
 <span class="fragment">var request = require("request");</span>
 <span class="fragment">var cheerio = require("cheerio");</span>
-<span class="fragment">var url = "http://en.cvbankas.lt/?miestas=Vilnius&padalinys%5B0%5D=76&keyw=;"</span>
+<span class="fragment">var url = "https://www.reed.co.uk/jobs?location=Glasgow;"</span>
 
 <span class="fragment">request(url, function (error, response, body) {
   <span class="fragment">var $ = cheerio.load(body);</span>
-  <span class="fragment">var jobs = $(".list_article");</span>
+  <span class="fragment">var jobs = $(".job_result");</span>
   <span class="fragment">jobs.each(function (i, job) {
-    var jobDetailsUrl = $(job).find("a.list_a").attr("href");
+    var jobDetailsUrl = $(job).find("h3 a").attr("href");
     var descr = $(job).find("h3").text();
-    var salary = $(job).find(".jobadlist_salary").match(/[0-9]+/);
-    var company = $(job).find(".heading_secondary").childNodes[1].text();
-    console.log(`Found a ${descr} job w/ salary ${salary} EUR.`);
+    var salary = $(job).find(".salary").match(/[0-9]+/);
+    var company = $(job).find(".posted_by a").text();
+    console.log(`Found a ${descr} job w/ salary ${salary} £.`);
   }</span>
 });</span></pre>
 					<aside class="notes">
@@ -1139,12 +1145,12 @@ R. Titov</code></pre></div>
 	          		<pre class="highlight fragment javascript" style="font-size:24px;line-height:38px;padding:5px;max-height:800px;width:106%">
 <span class="fragment">request(url, function (error, response, body) {
   <span class="fragment">var $ = cheerio.load(body);</span>
-  <span class="fragment">var jobs = $(".list_article");</span>
+  <span class="fragment">var jobs = $(".job_result");</span>
   <span class="fragment">jobs.each(function (i, job) {
-    var jobDetailsUrl = $(job).find("a.list_a").attr("href");
+    var jobDetailsUrl = $(job).find("h3 a").attr("href");
     /* ... */
     request(jobDetailsUrl, function (error, response, body) {
-      var details = $("#jobad_cont_main").text();
+      var details = $(".description").text();
       if (details.matches(/Java/)) {
         sendEmailAlert("A new Java job was found...");
       }
@@ -1154,34 +1160,35 @@ R. Titov</code></pre></div>
 					<aside class="notes">
 						How to crawl, how to go to next page.
 					</aside>
-	          		</section>	
+	          		</section>
 
 				<section>
 					<h2>Crawling</h2>
-					<img src="img/cvbankas-crawling.png" width="50%" />
+					<img src="img/reed-crawling.png" width="100%" />
 					<aside class="notes">
 						How to crawl, how to go to next page.
 					</aside>
 	          		</section>
 
-	          				          						<section>
+								<section>
 					<h2>Crawling</h2>
-	          		<pre class="highlight fragment javascript" style="font-size:24px;line-height:38px;padding:5px;max-height:800px;width:106%">
-<span class="fragment">request(url, function (error, response, body) {
-  <span class="fragment">var $ = cheerio.load(body);</span>
-  <span class="fragment">var jobs = $(".list_article");</span>
-  <span class="fragment">/* ... */</span>
-  <span class="fragment">var nextPage = $(".pages_ul");</span>
-  <span class="fragment">if (nextPage.text().matches("»")) {
-    /* Recursive call to process next page... */
-  }</span>
-});</span></pre>
+	          		<pre class="highlight fragment javascript" style="font-size:32px;line-height:46px;padding:5px;max-height:800px;width:100%">
+<span class="fragment">function openPage(url) {
+  <span class="fragment">request(url, function (error, response, body) {
+    <span class="fragment">var $ = cheerio.load(body);</span>
+    <span class="fragment">var jobs = $(".job_result");</span>
+    <span class="fragment">/* ... */</span>
+    <span class="fragment">var nextPage = $("a.page:last-child");</span>
+    <span class="fragment">if (!nextPage.hasClass("disabled")) {
+      var nextPageUrl = nextPage.attr("href");
+      openPage(nextPageUrl);
+    }</span>
+  });
+}</span></span></pre>
 					<aside class="notes">
 						How to crawl, how to go to next page.
 					</aside>
-	          		</section>	
-
-
+	          		</section>
 				</section>
 
 				<section data-background="img/challenge-accepted.gif">
@@ -1201,12 +1208,12 @@ R. Titov</code></pre></div>
 </div>
 </pre></code>
 						</li>
-						<li class="fragment">Use a tool to clean broken HTML (e.g. <a href="https://www.npmjs.com/package/htmltidy">HTMLTidy</a>)</li>	
+						<li class="fragment">Use a tool to clean broken HTML (e.g. <a href="https://www.npmjs.com/package/htmltidy">HTMLTidy</a>)</li>
 					</ul>
-					<aside class="notes">	
-					HTML parsers, our go-to tool, require sane and consistent HTML structure.				
+					<aside class="notes">
+					HTML parsers, our go-to tool, require sane and consistent HTML structure.
 					</aside>
-				</section>				
+				</section>
 
 				<section>
 					<h2>Rapidly changing structure</h2>
@@ -1216,8 +1223,8 @@ R. Titov</code></pre></div>
 					</ul>
 						<blockquote class="fragment" style="text-align:left;display:inline-block;"><span style="border-left:1px solid #f9c300;padding-left:40px;display:block;color:#f9c300;font-size:38px;line-height:1.2em;font-weight:bold;background: rgba(255, 255, 255, 0.05);box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);padding:25px 50px">In theory, theory and practice are the same.<br/>In practice, they are not.</span>
 						<cite style="display:block;clear:left;font-size:32px;margin-top:0.5em;"><span>- </span><span>Albert Einstein</span></cite>
-						</blockquote>					
-					<aside class="notes">	
+						</blockquote>
+					<aside class="notes">
 					HTML can change.
 					This will break your existing patterns.
 					Regular expressions, XPath, CSS.
@@ -1249,7 +1256,7 @@ R. Titov</code></pre></div>
 						<cite style="display:block;clear:left;font-size:32px;margin-top:0.5em;"><span>- </span><span>Spiderman's Uncle</span></cite>
 						</blockquote>
 					<p>
-          		</section>          		
+          		</section>
 
 				<section>
 					<h2>Legal considerations</h2>
@@ -1272,18 +1279,18 @@ R. Titov</code></pre></div>
 				<section>
 					<h2>Google scrapes all the time</h2>
 					<img style="float:left;width:49%" src="img/MattCutts.png" />
-					<img class="fragment" style="float:right;width:49%" src="img/DanBarker.png" />	
+					<img class="fragment" style="float:right;width:49%" src="img/DanBarker.png" />
 					<aside class="notes">
 						Google scrapes all the time, it's their core business.
 						But they do it in an ethical way.
-						They are a search engine, so it's assumed you can 
+						They are a search engine, so it's assumed you can
 					</aside>
-				</section>				
+				</section>
 
 				<section>
 					<h2>Signs you are up to no good</h2>
 					<ul>
-					  <li>Evading CAPTCHAs and other security features</li>					  
+					  <li>Evading CAPTCHAs and other security features</li>
 					  <li class="fragment">Potential for denial-of-service</li>
 					  <li class="fragment">Removing references to original site</li>
 					  <li class="fragment">Check terms of service, really</li>
@@ -1291,12 +1298,12 @@ R. Titov</code></pre></div>
 					<aside class="notes">
 						Removing references to original site. Otherwise, if they live on advertisements, it'll be bad for them.
 					</aside>
-				</section>				
+				</section>
 
 				<section>
 					<h2>Ethical Scraping</h2>
 					<ul>
-					  <li>Respect terms of service</li>					  
+					  <li>Respect terms of service</li>
 					  <li class="fragment">Potential for denial-of-service</li>
 					  <li class="fragment">Robots.txt</li>
 					  <li class="fragment">Running your scraper in off-hours</li>
@@ -1308,7 +1315,7 @@ R. Titov</code></pre></div>
 						<p>You don't want to bring down the website, so maybe run your scraper at night, when there's low traffic
 						<p>Or space your requests, don't send 1000 in one second, wait 1s between each.
 					</aside>
-				</section>								
+				</section>
 
 				<!--
 				<section>
@@ -1317,9 +1324,9 @@ R. Titov</code></pre></div>
 						<li><a href="https://www.npmjs.com/package/request">request</a> - Simplified HTTP request client</li>
 						<li><a href="https://www.npmjs.com/package/cheerio">cheerio</a> - jQuery for the server</li>
 					</ul>
-				</section>		
+				</section>
 				-->
-				
+
 				<section>
 					<h1>Takeaways</h1>
 					<ul>
@@ -1339,10 +1346,10 @@ R. Titov</code></pre></div>
 						<li class="fragment">Tooling available for most programming languages</li>
 						<li class="fragment">Every content which is visible to a user can be scraped</li>
 						<li class="fragment">Beware of its legal implications. </li>
-						<li class="fragment">Scrape responsibly.</li>
+						<li class="fragment">Scrape responsibly. Have fun!</li>
 					</ul>
 					<aside class="notes">
-					</aside>          
+					</aside>
 				</section>
 
 				<section data-background-image="img/thats-all-folks.gif">
@@ -1350,7 +1357,7 @@ R. Titov</code></pre></div>
 					That kind of wraps it up. Thank you for listening to me.
 					We have just scratched the surface of a big ocean.
 					</aside>
-				</section> 			
+				</section>
 
 			</div>
 
@@ -1379,7 +1386,7 @@ R. Titov</code></pre></div>
 					/*{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } }
 					,*/
 
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() {
     					[].forEach.call( document.querySelectorAll( '.highlight, pre code' ), function( v, i) {
         					hljs.highlightBlock(v);
     					});
